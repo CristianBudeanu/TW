@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Event";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+
+<section>
+          <header>
+               <h1>Healthy Living Event</h1>
+               <nav>
+                    <a href="#about">About</a>
+                    <a href="#speakers">Speakers</a>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#register">Register</a>
+               </nav>
+          </header>
+          <main>
+               <section id="about">
+                    <h2>About the Event</h2>
+                    <p>Join us for a day of learning and inspiration to live a healthier life. Our expert speakers will share their insights and practical tips on healthy living, covering topics such as nutrition, fitness, mental health, and more. The event will be held on [insert date] at [insert location].</p>
+               </section>
+               <section id="speakers">
+                    <h2>Speakers</h2>
+                    <ul>
+                         <li>Dr. John Smith - Nutritionist</li>
+                         <li>Jane Doe - Fitness Trainer</li>
+                         <li>Dr. Sarah Lee - Psychologist</li>
+                    </ul>
+               </section>
+               <section id="schedule">
+                    <h2>Schedule</h2>
+                    <table>
+                         <tr>
+                              <th>Time</th>
+                              <th>Activity</th>
+                         </tr>
+                         <tr>
+                              <td>9:00 am - 9:30 am</td>
+                              <td>Registration</td>
+                         </tr>
+                         <tr>
+                              <td>9:30 am - 10:30 am</td>
+                              <td>Keynote speech by Dr. John Smith</td>
+                         </tr>
+                         <tr>
+                              <td>10:30 am - 11:30 am</td>
+                              <td>Workshop by Jane Doe</td>
+                         </tr>
+                         <tr>
+                              <td>11:30 am - 12:30 pm</td>
+                              <td>Lunch break</td>
+                         </tr>
+                         <tr>
+                              <td>12:30 pm - 1:30 pm</td>
+                              <td>Panel discussion with all speakers</td>
+                         </tr>
+                         <tr>
+                              <td>1:30 pm - 2:30 pm</td>
+                              <td>Closing remarks by Dr. Sarah Lee</td>
+                         </tr>
+                    </table>
+               </section>
+               <section id="register">
+                    <h2>Register</h2>
+                    <p>To register for the event, please fill out the form below:</p>
+                    <form>
+                         <label for="name">Name:</label>
+                         <input type="text" id="name" name="name" required><br>
+
+                         <label for="email">Email:</label>
+                         <input type="email" id="email" name="email" required><br>
+
+                         <label for="phone">Phone:</label>
+                         <input type="tel" id="phone" name="phone"><br>
+
+                         <label for="attendees">Number of Attendees:</label>
+                         <input type="number" id="attendees" name="attendees" min="1" max="10" required><br>
+
+                         <input type="submit" value="Register">
+                    </form>
+               </section>
+          </main>
+</section>
