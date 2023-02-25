@@ -125,11 +125,12 @@
     <Content Include="assets\img\clients\client-7.png" />
     <Content Include="assets\img\clients\client-8.png" />
     <Content Include="assets\img\counts-img.jpg" />
-    <Content Include="assets\img\Creatori\Alex.png" />
+    <Content Include="assets\img\Creatori\Alexandra.png" />
     <Content Include="assets\img\Creatori\Catalin.png" />
-    <Content Include="assets\img\Creatori\Cristi.png" />
-    <Content Include="assets\img\Creatori\Rux.png" />
+    <Content Include="assets\img\Creatori\Cristi %282%29.png" />
+    <Content Include="assets\img\Creatori\Ruxandra.png" />
     <Content Include="assets\img\cta-bg.jpg" />
+    <Content Include="assets\img\event\event_page.jpeg" />
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\features.jpg" />
     <Content Include="assets\img\hero-bg.jpg" />
@@ -146,17 +147,29 @@
     <Content Include="assets\img\portfolio\portfolio-details-1.jpg" />
     <Content Include="assets\img\portfolio\portfolio-details-2.jpg" />
     <Content Include="assets\img\portfolio\portfolio-details-3.jpg" />
+    <Content Include="assets\img\shop\b-vitamin.png" />
+    <Content Include="assets\img\shop\bags.png" />
+    <Content Include="assets\img\shop\bottle.jpg" />
+    <Content Include="assets\img\shop\bras.png" />
     <Content Include="assets\img\shop\complex.jpg" />
+    <Content Include="assets\img\shop\creatine.png" />
     <Content Include="assets\img\shop\dieta grea.jpg" />
     <Content Include="assets\img\shop\dieta1.jpg" />
+    <Content Include="assets\img\shop\omega3.png" />
+    <Content Include="assets\img\shop\protein.png" />
     <Content Include="assets\img\shop\shop2.jpg" />
+    <Content Include="assets\img\shop\tracker.png" />
     <Content Include="assets\img\slide\slide-17.jpg" />
+    <Content Include="assets\img\Sport\104977.jpg" />
     <Content Include="assets\img\Sport\bicycletour.jpg" />
     <Content Include="assets\img\Sport\cycling.jpg" />
     <Content Include="assets\img\Sport\events.png" />
+    <Content Include="assets\img\Sport\olympic.png" />
     <Content Include="assets\img\Sport\run.jpg" />
     <Content Include="assets\img\Sport\Sport.png" />
+    <Content Include="assets\img\Sport\Swimming.jpg" />
     <Content Include="assets\img\Sport\Yogajpg.jpg" />
+    <Content Include="assets\img\Sport\yogaret.png" />
     <Content Include="assets\img\Sport\yogaRetreats.jpg" />
     <Content Include="assets\img\testimonials-bg.jpg" />
     <Content Include="assets\img\Screenshot_1.png" />
@@ -306,7 +319,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>

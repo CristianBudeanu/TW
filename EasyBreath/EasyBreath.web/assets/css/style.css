@@ -109,6 +109,7 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+
 /*--------------------------------------------------------------
 # Regisgtration
 --------------------------------------------------------------*/
@@ -1847,3 +1848,54 @@ img {
 	display: block;
 	margin-bottom: 10px;
 }
+
+/*--------------------------------------------------------------
+# Shop Page
+--------------------------------------------------------------*/
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 30px 0;
+}
+
+.product {
+	width: 300px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 20px;
+	margin: 10px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+	.product img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.product h2 {
+		font-size: 24px;
+		margin: 0;
+	}
+
+	.product p {
+		font-size: 16px;
+		margin: 10px 0;
+	}
+
+	.product button {
+		background-color: #4CAF50;
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 18px;
+		margin-top: 10px;
+	}
+
+		.product button:hover {
+			background-color: #3e8e41;
+		}
