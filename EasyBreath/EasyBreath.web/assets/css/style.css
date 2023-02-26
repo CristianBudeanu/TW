@@ -7,7 +7,7 @@
 :root {
 	--clr-neon: rgb(240, 240, 240);
 	--clr-bg: rgba(1, 1, 1, 1);
-	--clr-hoo: blue;
+	color: red;
 }
 
 *,
