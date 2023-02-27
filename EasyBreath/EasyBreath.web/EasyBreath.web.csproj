@@ -135,6 +135,7 @@
     <Content Include="assets\img\features.jpg" />
     <Content Include="assets\img\hero-bg.jpg" />
     <Content Include="assets\img\imag.jpg" />
+    <Content Include="assets\img\moon.png" />
     <Content Include="assets\img\portfolio\portfolio-1.jpg" />
     <Content Include="assets\img\portfolio\portfolio-2.jpg" />
     <Content Include="assets\img\portfolio\portfolio-3.jpg" />
@@ -171,6 +172,7 @@
     <Content Include="assets\img\Sport\Yogajpg.jpg" />
     <Content Include="assets\img\Sport\yogaret.png" />
     <Content Include="assets\img\Sport\yogaRetreats.jpg" />
+    <Content Include="assets\img\sun.png" />
     <Content Include="assets\img\testimonials-bg.jpg" />
     <Content Include="assets\img\Screenshot_1.png" />
     <Content Include="assets\img\testimonials\testimonials-1.jpg" />

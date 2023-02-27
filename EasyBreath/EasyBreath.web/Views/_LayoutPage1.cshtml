@@ -58,25 +58,26 @@
                          <li><a class="nav-link scrollto" href="#team">Team</a></li>
                          <li class="dropdown">
                               <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                                        <ul>
-                                             <li>
-                                                  @Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { @class = "nav-link " })
-                                             </li>
-                                             <li>
-                                                  @Html.ActionLink("Page", "InnerPage", "Home", null, new { @class = "nav-link " })
-                                             </li>
-                                             <li>
-                                                  @Html.ActionLink("Diete", "Diete", "Home", null, new { @class = "nav-link " })
-                                             </li>
-                                             <li>
-                                                  @Html.ActionLink("Vitamins & Supplements", "Vitamins", "Home", null, new { @class = "nav-link " })
-                                             </li>
-                                             <li><a href="#">Deep Drop Down 5</a></li>
-                                        </ul>
+                              <ul>
+                                   <li>
+                                        @Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { @class = "nav-link " })
+                                   </li>
+                                   <li>
+                                        @Html.ActionLink("Page", "InnerPage", "Home", null, new { @class = "nav-link " })
+                                   </li>
+                                   <li>
+                                        @Html.ActionLink("Diete", "Diete", "Home", null, new { @class = "nav-link " })
+                                   </li>
+                                   <li>
+                                        @Html.ActionLink("Vitamins & Supplements", "Vitamins", "Home", null, new { @class = "nav-link " })
+                                   </li>
+                                   <li><a href="#">Deep Drop Down 5</a></li>
+                              </ul>
                          </li>
                          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
                </nav><!-- .navbar -->
 
                <a href="#about" class="get-started-btn scrollto">Get Started</a>
@@ -151,7 +152,7 @@
 
           <div class="container">
                <div class="copyright">
-                    &copy;<strong><span>EB</span></strong>. 
+                    &copy;<strong><span>EB</span></strong>.
                </div>
           </div>
      </footer><!-- End Footer -->;
@@ -170,6 +171,37 @@
 
      <!-- Template Main JS File -->
      <script src="~/assets/js/main.js"></script>
+     <script>
+          var iconMoon = document.getElementById("iconMoon");
+          var SetTheme = document.body;
 
+
+          iconMoon.onclick = function () {
+               SetTheme.classList.toggle("dark-theme");
+
+               var theme;
+
+               if (SetTheme.classList.contains("dark-theme")) {
+                    iconMoon.src = "/assets/img/sun.png";
+                    console.log("Dark mode");
+                    theme = "DARK";
+
+               }
+               else {
+                    iconMoon.src = "/assets/img/moon.png";
+                    console.log("Light mode");
+                    theme = "LIGHT";
+               }
+               localStorage.setItem("PageTheme", JSON.stringify(theme));
+          }
+
+          let GetTheme = JSON.parse(localStorage.getItem("PageTheme"));
+          console.log(GetTheme);
+
+          if (GetTheme === "DARK") {
+               document.body.classList = "dark-theme";
+          }
+
+     </script>
 </body>
 </html>
