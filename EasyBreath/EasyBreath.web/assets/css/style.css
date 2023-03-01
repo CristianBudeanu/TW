@@ -7,7 +7,8 @@
 :root {
 	--clr-neon: rgb(240, 240, 240);
 	--clr-bg: rgba(1, 1, 1, 1);
-	color: red;
+	--clr-white: rgba(255, 255, 255, 1);
+	--clr-black: black;
 }
 
 *,
@@ -16,9 +17,21 @@
 	box-sizing: border-box;
 }
 
+#iconMoon {
+	width: 30px;
+	margin: auto 15px;
+	float: left;
+	cursor: pointer;
+}
+
+.dark-theme {
+	--clr-white: black;
+	--clr-black: rgba(255, 255, 255, 1);
+
+}
+
 .button {
-	font-size: 2em;
-	background-color: red;
+	font-size: 1em;
 	display: inline-block;
 	cursor: pointer;
 	text-decoration: none;
@@ -224,16 +237,16 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-	color: #151515;
+	color: var(--clr-white);
 	transition: all 0.5s;
 	z-index: 997;
 	padding: 15px 0;
-	background-color: black;
+	background-color: var(--clr-white);
 }
 
 	#header.header-scrolled,
 	#header.header-inner-pages {
-		background: rgba(0, 0, 0, 0.8);
+		background: var(--clr-white);
 	}
 
 	#header .logo {
@@ -247,7 +260,7 @@ h6 {
 	}
 
 		#header .logo a {
-			color: #fff;
+			color: var(--clr-black);
 		}
 
 			#header .logo a span {
@@ -262,7 +275,7 @@ h6 {
 #  Get Startet Button
 --------------------------------------------------------------*/
 .get-started-btn {
-	color: #fff;
+	color: var(--clr-black);
 	border-radius: 4px;
 	padding: 7px 25px 8px 25px;
 	white-space: nowrap;
@@ -314,7 +327,7 @@ h6 {
 		padding: 10px 0 10px 30px;
 		font-size: 15px;
 		font-weight: 600;
-		color: #fff;
+		color: var(--clr-black);
 		white-space: nowrap;
 		transition: 0.3s;
 	}
@@ -767,6 +780,7 @@ h6 {
 section {
 	padding: 60px 0;
 	overflow: hidden;
+	background-color: var(--clr-white);
 }
 
 .section-title {
@@ -781,7 +795,7 @@ section {
 		margin: 0 0 5px 0;
 		letter-spacing: 2px;
 		text-transform: uppercase;
-		color: #aaaaaa;
+		color: var(--clr-black);
 		font-family: "Poppins", sans-serif;
 	}
 
@@ -792,6 +806,7 @@ section {
 			display: inline-block;
 			background: #ffde9e;
 			margin: 4px 10px;
+			color : var(--clr-black);
 		}
 
 	.section-title p {
@@ -801,7 +816,7 @@ section {
 		font-weight: 700;
 		text-transform: uppercase;
 		font-family: "Poppins", sans-serif;
-		color: #151515;
+		color: var(--clr-black);
 	}
 
 /*--------------------------------------------------------------
@@ -811,16 +826,19 @@ section {
 	font-weight: 700;
 	font-size: 28px;
 	font-family: "Poppins", sans-serif;
+	color: var(--clr-black);
 }
 
 .about .content ul {
 	list-style: none;
 	padding: 0;
+	color: var(--clr-black);
 }
 
 	.about .content ul li {
 		padding: 0 0 8px 26px;
 		position: relative;
+		color: var(--clr-black);
 	}
 
 	.about .content ul i {
@@ -833,7 +851,15 @@ section {
 
 .about .content p:last-child {
 	margin-bottom: 0;
+	color : var(--clr-black);
 }
+
+.about .content p {
+	margin-bottom: 0;
+	color: var(--clr-black);
+}
+
+
 
 /*--------------------------------------------------------------
 # Clients
