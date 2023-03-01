@@ -8,7 +8,7 @@ namespace EasyBreath.web.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        // GET: Home Page
         public ActionResult Index()
          {
              return View();
