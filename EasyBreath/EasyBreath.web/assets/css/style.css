@@ -9,6 +9,7 @@
 	--clr-bg: rgba(1, 1, 1, 1);
 	--clr-white: rgba(255, 255, 255, 1);
 	--clr-black: black;
+	--clr-black1: black;
 }
 
 *,
@@ -27,6 +28,7 @@
 .dark-theme {
 	--clr-white: black;
 	--clr-black: rgba(255, 255, 255, 1);
+	--clr-black1: yellow;
 
 }
 
@@ -327,7 +329,7 @@ h6 {
 		padding: 10px 0 10px 30px;
 		font-size: 15px;
 		font-weight: 600;
-		color: var(--clr-black);
+		color: var(--clr-black1);
 		white-space: nowrap;
 		transition: 0.3s;
 	}
@@ -629,7 +631,7 @@ h6 {
 .letter-image {
 	position: absolute;
 	top: 105%;
-	left: 95%;
+	left: 5%;
 	width: 200px;
 	height: 100px;
 	-webkit-transform: translate(-50%, -50%);
