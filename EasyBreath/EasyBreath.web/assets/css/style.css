@@ -629,7 +629,7 @@ h6 {
 .letter-image {
 	position: absolute;
 	top: 105%;
-	left: 95%;
+	left: 5%;
 	width: 200px;
 	height: 100px;
 	-webkit-transform: translate(-50%, -50%);
