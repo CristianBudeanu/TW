@@ -1,9 +1,21 @@
 ﻿
 @{
-    ViewBag.Title = "Event";
-    Layout = "~/Views/_LayoutPage1.cshtml";
+     ViewBag.Title = "Event";
+     Layout = "~/Views/_LayoutPage1.cshtml";
 }
+<section id="breadcrumbs" class="breadcrumbs">
+     <div class="container">
 
+          <div class="d-flex justify-content-between align-items-center">
+               <h2>Event</h2>
+               <ol>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li>Event</li>
+               </ol>
+          </div>
+
+     </div>
+</section>
 
 <section>
      <section id="about" class="about">
@@ -32,39 +44,39 @@
           </div>
      </section>
      <section>
-       <div class="container" data-aos="fade-up">
-          <h2 style="text-align: center">Schedule</h2>
-          <table class="table">
-               <tr>
-                    <th>Time</th>
-                    <th>Activity</th>
-               </tr>
-               <tr>
-                    <td>9:00 am - 9:30 am</td>
-                    <td>Registration</td>
-               </tr>
-               <tr>
-                    <td>9:30 am - 10:30 am</td>
-                    <td>Keynote speech by Dr. John Smith</td>
-               </tr>
-               <tr>
-                    <td>10:30 am - 11:30 am</td>
-                    <td>Workshop by Jane Doe</td>
-               </tr>
-               <tr>
-                    <td>11:30 am - 12:30 pm</td>
-                    <td>Lunch break</td>
-               </tr>
-               <tr>
-                    <td>12:30 pm - 1:30 pm</td>
-                    <td>Panel discussion with all speakers</td>
-               </tr>
-               <tr>
-                    <td>1:30 pm - 2:30 pm</td>
-                    <td>Closing remarks by Dr. Sarah Lee</td>
-               </tr>
-          </table>
-          </div> 
+          <div class="container" data-aos="fade-up">
+               <h2 style="text-align: center">Schedule</h2>
+               <table class="table">
+                    <tr>
+                         <th>Time</th>
+                         <th>Activity</th>
+                    </tr>
+                    <tr>
+                         <td>9:00 am - 9:30 am</td>
+                         <td>Registration</td>
+                    </tr>
+                    <tr>
+                         <td>9:30 am - 10:30 am</td>
+                         <td>Keynote speech by Dr. John Smith</td>
+                    </tr>
+                    <tr>
+                         <td>10:30 am - 11:30 am</td>
+                         <td>Workshop by Jane Doe</td>
+                    </tr>
+                    <tr>
+                         <td>11:30 am - 12:30 pm</td>
+                         <td>Lunch break</td>
+                    </tr>
+                    <tr>
+                         <td>12:30 pm - 1:30 pm</td>
+                         <td>Panel discussion with all speakers</td>
+                    </tr>
+                    <tr>
+                         <td>1:30 pm - 2:30 pm</td>
+                         <td>Closing remarks by Dr. Sarah Lee</td>
+                    </tr>
+               </table>
+          </div>
      </section>
 
      <section id="register" style="background-color: #ffc93c">

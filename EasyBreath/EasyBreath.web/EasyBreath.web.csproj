@@ -136,9 +136,9 @@
     <Content Include="assets\img\hero-bg.jpg" />
     <Content Include="assets\img\imag.jpg" />
     <Content Include="assets\img\moon.png" />
-    <Content Include="assets\img\portfolio\portfolio-1.jpg" />
-    <Content Include="assets\img\portfolio\portfolio-2.jpg" />
-    <Content Include="assets\img\portfolio\portfolio-3.jpg" />
+    <Content Include="assets\img\portfolio\axj74gvcxd2w.jpg" />
+    <Content Include="assets\img\portfolio\easybreath15jpg.jpg" />
+    <Content Include="assets\img\portfolio\easybreath4.jpg" />
     <Content Include="assets\img\portfolio\portfolio-4.jpg" />
     <Content Include="assets\img\portfolio\portfolio-5.jpg" />
     <Content Include="assets\img\portfolio\portfolio-6.jpg" />
@@ -172,6 +172,9 @@
     <Content Include="assets\img\Sport\Yogajpg.jpg" />
     <Content Include="assets\img\Sport\yogaret.png" />
     <Content Include="assets\img\Sport\yogaRetreats.jpg" />
+    <Content Include="assets\img\Statistic\Statistic1.png" />
+    <Content Include="assets\img\Statistic\Statistic2.png" />
+    <Content Include="assets\img\Statistic\Statistic3.jpg" />
     <Content Include="assets\img\sun.png" />
     <Content Include="assets\img\testimonials-bg.jpg" />
     <Content Include="assets\img\Screenshot_1.png" />
