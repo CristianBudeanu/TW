@@ -1,0 +1,11 @@
+W:\TW_Project\TW\EasyBreath\BusinessLogic\bin\Debug\BusinessLogic.dll
+W:\TW_Project\TW\EasyBreath\BusinessLogic\bin\Debug\BusinessLogic.pdb
+W:\TW_Project\TW\EasyBreath\BusinessLogic\bin\Debug\Domain.dll
+W:\TW_Project\TW\EasyBreath\BusinessLogic\bin\Debug\Helpers.dll
+W:\TW_Project\TW\EasyBreath\BusinessLogic\bin\Debug\Domain.pdb
+W:\TW_Project\TW\EasyBreath\BusinessLogic\bin\Debug\Helpers.pdb
+W:\TW_Project\TW\EasyBreath\BusinessLogic\obj\Debug\EasyBreath.BusinessLogic.csproj.AssemblyReference.cache
+W:\TW_Project\TW\EasyBreath\BusinessLogic\obj\Debug\EasyBreath.BusinessLogic.csproj.CoreCompileInputs.cache
+W:\TW_Project\TW\EasyBreath\BusinessLogic\obj\Debug\EasyBreath.BusinessLogic.csproj.CopyComplete
+W:\TW_Project\TW\EasyBreath\BusinessLogic\obj\Debug\BusinessLogic.dll
+W:\TW_Project\TW\EasyBreath\BusinessLogic\obj\Debug\BusinessLogic.pdb
