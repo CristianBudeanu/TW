@@ -1,64 +1,97 @@
 ﻿
 @{
-     ViewBag.Title = "Nutrition";
-     Layout = "~/Views/_LayoutPage1.cshtml";
+    ViewBag.Title = "Nutrition";
+    Layout = "~/Views/_LayoutPage1.cshtml";
 }
 <section id="breadcrumbs" class="breadcrumbs">
-     <div class="container">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Nutrition</h2>
+            <ol>
+                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li>Nutrition</li>
+            </ol>
+        </div>
 
-          <div class="d-flex justify-content-between align-items-center">
-               <h2>Nutrition</h2>
-               <ol>
-                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li>Nutrition</li>
-               </ol>
-          </div>
-
-     </div>
+    </div>
 </section>
-
+<section id="about" class="about">
+    <div class="container" style="margin-top: 50px" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                <img src="~/assets/img/nutrition/image2.jpg" class="img-fluid" style="margin-top: 30px; margin-left: 20px; border-radius: 25px; border: 4px solid #1381ad; " alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+                <h3>Healthy Nutrition</h3>
+                <p class="fst-normal">
+                    Nutrition refers to the study of the nutrients in food, their functions in the body, and how the body processes and uses those nutrients.
+                    It involves the consumption of food and the chemical reactions that take place within the body to convert food into energy,
+                    as well as to maintain and repair tissues.
+                </p>
+                <br />
+                <p class="fst-italic">Eating a healthy and balanced diet has numerous benefits, including: </p>
+                <ul>
+                    <li><i class="ri-check-double-line"></i> Reduced risk of chronic diseases like heart disease, diabetes, and cancer.</li>
+                    <li><i class="ri-check-double-line"></i> Improved cognitive function and mental health.</li>
+                    <li><i class="ri-check-double-line"></i> Increase in energy and overall well-being.</li>
+                    <li><i class="ri-check-double-line"></i> Maintaining a healthy weight.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section><!-- End nutriton Section -->
+<!-- Food groups Section -->
 <section>
-     <header>
-          <h1>Healthy Nutrition</h1>
-          <nav>
-               <ul>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#food-groups">Food Groups</a></li>
-                    <li><a href="#meal-planning">Meal Planning</a></li>
-               </ul>
-          </nav>
-     </header>
-     <main>
-          <section id="benefits">
-               <h2>Benefits of Healthy Nutrition</h2>
-               <p>Eating a healthy and balanced diet has numerous benefits, including:</p>
-               <ul>
-                    <li>Reduced risk of chronic diseases like heart disease, diabetes, and cancer</li>
-                    <li>Improved cognitive function and mental health</li>
-                    <li>Increase in energy and overall well-being</li>
-                    <li>Maintaining a healthy weight</li>
-               </ul>
-          </section>
-          <section id="food-groups">
-               <h2>Food Groups</h2>
-               <p>A healthy diet includes a variety of foods from each of the following food groups:</p>
-               <ul>
-                    <li>Vegetables and fruits</li>
-                    <li>Grains and cereals</li>
-                    <li>Proteins (meat, fish, beans, nuts, and seeds)</li>
-                    <li>Dairy or dairy alternatives</li>
-               </ul>
-               <p>It's important to choose whole, minimally processed foods and limit your intake of sugary and fatty foods.</p>
-          </section>
-          <section id="meal-planning">
-               <h2>Meal Planning</h2>
-               <p>Planning your meals ahead of time can help you make healthier food choices and stick to a balanced diet. Some tips for meal planning include:</p>
-               <ul>
-                    <li>Creating a grocery list based on your planned meals</li>
-                    <li>Preparing meals in advance and storing them in the fridge or freezer</li>
-                    <li>Choosing recipes that incorporate a variety of healthy ingredients</li>
-               </ul>
-               <p>Remember to listen to your body's hunger and fullness signals, and aim for a balanced plate with a variety of foods.</p>
-          </section>
-     </main>
+    <div class="container" data-aos="fade-up">
+        <h2 style="margin-top: 30px; text-align: center">Food groups</h2>
+        <p class="fst-italic" style="text-align: center">A healthy diet includes a variety of foods from each of the following food groups:</p>
+        <div class="products">
+            <div class="product">
+                <img src="~/assets/img/nutrition/image1.png" alt="Nutrition Image">
+                <h2>Vegetables and fruits</h2>
+                <p>It can lower blood pressure, reduce the risk of heart disease,
+                prevent some types of cancer, lower risk of eye and digestive problems.</p>
+                <a href=@Url.Action("Shop", "Home")>
+                    <button style="background-color: #026773; margin-top:30px;">Go to shop</button>
+                </a>
+            </div>
+
+            <div class="product">
+                <img src="~/assets/img/nutrition/image2.png" alt="Nutrition Image">
+                <h2>Grains and cereals</h2>
+                <p>
+                    It is a good source of many minerals, such as iron, magnesium, copper, phosphorus and zinc.
+                </p>
+                <a href=@Url.Action("Shop", "Home")>
+                    <button style="background-color: #026773; margin-top: 30px;">Go to shop</button>
+                </a>
+            </div>
+
+            <div class="product">
+                <img src="~/assets/img/nutrition/image3.png" alt="Product Image">
+                <h2>Proteins (meat, fish, beans, nuts, and seeds)</h2>
+                <p>
+                    Protein is considered the building block of life and is found in every cell of the body.
+                </p>
+                <a href=@Url.Action("Shop", "Home")>
+                    <button style="background-color: #026773; margin-top: 30px;">Go to shop</button>
+                </a>
+            </div>
+
+            <div class="product">
+                <img src="~/assets/img/nutrition/image4.png" alt="Product Image">
+                <h2>Dairy alternatives</h2>
+                <p>
+                    Keep muscles, bones, nerves, teeth, skin and vision healthy.
+                </p>
+                <a href=@Url.Action("Shop", "Home")>
+                    <button style="background-color: #026773; margin-top: 30px;">Go to shop</button>
+                </a>
+            </div>
+
+            <!-- Add more product divs as needed -->
+        </div>
+    </div>
 </section>
+<!-- End Food groups Section -->
+
