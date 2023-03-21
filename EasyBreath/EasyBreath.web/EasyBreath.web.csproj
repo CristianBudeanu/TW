@@ -403,6 +403,7 @@
     <Content Include="Views\Home\Event.cshtml" />
     <Content Include="Views\Home\Nutrition.cshtml" />
     <Content Include="Views\Home\Vitamins.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
