@@ -318,6 +318,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -414,6 +415,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Register\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyBreath.BussinessLogic\EasyBreath.BussinessLogic.csproj">
+      <Project>{21AFFDDF-E1AB-4AF5-84D7-96270EA88A35}</Project>
+      <Name>EasyBreath.BussinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyBreath.Domain\EasyBreath.Domain.csproj">
+      <Project>{C1CFC85D-D9AA-497D-BA22-512A8BAD1386}</Project>
+      <Name>EasyBreath.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

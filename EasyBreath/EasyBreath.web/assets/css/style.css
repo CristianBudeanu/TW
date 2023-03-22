@@ -123,10 +123,6 @@ h6 {
 --------------------------------------------------------------*/
 /* Import Google font - Poppins */
 
-body.loginBody {
-	background-color: var(--crl-black);
-}
-
 
 /*--------------------------------------------------------------
 # Back to top button
