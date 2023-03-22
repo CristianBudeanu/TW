@@ -1,0 +1,9 @@
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.BussinessLogic.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.BussinessLogic.pdb
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Domain.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Domain.pdb
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.csproj.AssemblyReference.cache
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.csproj.CoreCompileInputs.cache
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.csproj.CopyComplete
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.pdb

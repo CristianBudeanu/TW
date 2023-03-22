@@ -1,0 +1,6 @@
+D:\projects\TW\EasyBreath\EasyBreath.Helpers\bin\Debug\EasyBreath.Helpers.dll
+D:\projects\TW\EasyBreath\EasyBreath.Helpers\bin\Debug\EasyBreath.Helpers.pdb
+D:\projects\TW\EasyBreath\EasyBreath.Helpers\obj\Debug\EasyBreath.Helpers.csproj.AssemblyReference.cache
+D:\projects\TW\EasyBreath\EasyBreath.Helpers\obj\Debug\EasyBreath.Helpers.csproj.CoreCompileInputs.cache
+D:\projects\TW\EasyBreath\EasyBreath.Helpers\obj\Debug\EasyBreath.Helpers.dll
+D:\projects\TW\EasyBreath\EasyBreath.Helpers\obj\Debug\EasyBreath.Helpers.pdb

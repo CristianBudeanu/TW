@@ -1,6 +1,7 @@
 ﻿using EasyBreath.BussinessLogic.Interfaces;
 using EasyBreath.Domain.Entities.Response;
 using EasyBreath.Domain.Entities.User;
+using EasyBreath.web.Models;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -32,13 +33,13 @@ namespace EasyBreath.web.Controllers
                return View();
         }
           [HttpPost]
-          public ActionResult Index(Register e)
+          public ActionResult Home(Register e)
           {
                return View();
           }
 
           [HttpGet]
-          public ActionResult Wellcome(Register e)
+          public ActionResult welcome(Register e)
           {
                return View();
           }
