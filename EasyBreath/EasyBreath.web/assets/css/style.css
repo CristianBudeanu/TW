@@ -947,7 +947,7 @@ section {
 		margin: 0 auto;
 		width: 64px;
 		height: 64px;
-		background: #ffc451;
+		background: #008F8C /*#ffc451*/;
 		border-radius: 4px;
 		display: flex;
 		align-items: center;
@@ -1059,7 +1059,7 @@ section {
 		.portfolio #portfolio-flters li:hover,
 		.portfolio #portfolio-flters li.filter-active {
 			color: #151515;
-			background: #ffc451;
+			background: #008F8C;
 		}
 
 		.portfolio #portfolio-flters li:last-child {

@@ -9,9 +9,9 @@
      <div class="container" data-aos="fade-up">
 
           <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-               <div class="col-xl-6 col-lg-8">
-                    <h1>A healthy life with EB<span>.</span></h1>f
-                    <h2>We are team</h2>
+               <div class="col-xl-10 col-lg-12">
+                    <h1>A healthy life with Easy Breath<span>.</span></h1>f
+                    <h2> “The greatest wealth is health.” – Virgil</h2>
                </div>
           </div>
 
@@ -87,30 +87,31 @@
 
                <div class="row">
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                         <img src="~/assets/img/about.jpg" class="img-fluid" alt="">
+                         <img src="~/assets/img/image.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-                         <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                         <p class="fst-italic">
+                        <h3>Benefits of adopting a healthy lifestyle:</h3>
+@*                         <p class="fst-italic">
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                               magna aliqua.
-                         </p>
-                         <ul>
-                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                         </ul>
-                         <p>
+                         </p>*@
+                    <ul>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Improved physical health:</b> A healthy lifestyle can help reduce the risk of chronic diseases such as obesity, type 2 diabetes, heart disease, and certain types of cancer.</li>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Better mental health: </b> Regular exercise, good sleep habits, and a balanced diet can help reduce stress, anxiety, and depression symptoms.</li>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Improved quality of life:</b> A healthy lifestyle can help you feel better and enjoy life more.</li>
+                        <li><i class="ri-check-double-line"></i><b class="fst-italic"> Reduced healthcare costs: </b> This can help you avoid costly medical treatments and procedures in the long run.</li>
+                    </ul>
+@*                         <p>
                               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-                         </p>
+                         </p>*@
                     </div>
                </div>
 
           </div>
      </section><!-- End About Section -->
      <!-- ======= Clients Section ======= -->
-     <section id="clients" class="clients">
+     @*<section id="clients" class="clients">
           <div class="container" data-aos="zoom-in">
 
                <div class="clients-slider swiper">
@@ -128,9 +129,10 @@
                </div>
 
           </div>
-     </section><!-- End Clients Section -->
+     </section> *@
+    @*End Clients Section*@ 
      <!-- ======= Features Section ======= -->
-     <section id="features" class="features">
+ @*    <section id="features" class="features">
           <div class="container" data-aos="fade-up">
 
                <div class="row">
@@ -160,7 +162,8 @@
                </div>
 
           </div>
-     </section><!-- End Features Section -->
+     </section> *@
+   @* End Features Section *@
      <!-- ======= Services Section ======= -->
      <section id="services" class="services">
           <div class="container" data-aos="fade-up">
@@ -174,57 +177,57 @@
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                          <div class="icon-box">
                               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                              <h4><a href="">Products</a></h4>
-                              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                              <h4><a href=@Url.Action("Vitamins", "Home")>Vitamins</a></h4>
+                              <p>Vitamins are essential organic compounds</p>
                          </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                          <div class="icon-box">
-                              <div class="icon"><i class="bx bx-file"></i></div>
-                              <h4><a href="">Sed ut perspiciatis</a></h4>
-                              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                              <div class="icon" ><i class="bx bx-file"></i></div>
+                              <h4><a href=@Url.Action("Event", "Home")>Events</a></h4>
+                              <p>Events can bring people together, creating a sense of community and belonging.</p>
                          </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                          <div class="icon-box">
                               <div class="icon"><i class="bx bx-tachometer"></i></div>
-                              <h4><a href="">Magni Dolores</a></h4>
-                              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                              <h4><a href=@Url.Action("Diete", "Home")>Diets</a></h4>
+                              <p>types and amounts of food and drink that a person consumes regularly.</p>
                          </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+                    @*<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                          <div class="icon-box">
                               <div class="icon"><i class="bx bx-world"></i></div>
                               <h4><a href="">Nemo Enim</a></h4>
                               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                          </div>
-                    </div>
+                    </div>*@
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                    @*<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
                          <div class="icon-box">
                               <div class="icon"><i class="bx bx-slideshow"></i></div>
                               <h4><a href="">Dele cardo</a></h4>
                               <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
                          </div>
-                    </div>
+                    </div>*@
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                    @*<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
                          <div class="icon-box">
                               <div class="icon"><i class="bx bx-arch"></i></div>
                               <h4><a href="">Divera don</a></h4>
                               <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
                          </div>
-                    </div>
+                    </div>*@
 
                </div>
 
           </div>
      </section><!-- End Services Section -->
      <!-- ======= Cta Section ======= -->
-     <section id="cta" class="cta">
+     <!--<section id="cta" class="cta">
           <div class="container" data-aos="zoom-in">
 
                <div class="text-center">
@@ -234,23 +237,26 @@
                </div>
 
           </div>
-     </section><!-- End Cta Section -->
+     </section>--><!-- End Cta Section -->
+
+
+
      <!-- ======= Portfolio Section ======= -->
-     <section id="portfolio" class="portfolio">
+     @*<section id="portfolio" class="portfolio">
           <div class="container" data-aos="fade-up">
 
                <div class="section-title">
                     <h2>Portfolio</h2>
-                    <p>Check our Portfolio</p>
+                    <p>Check our Products</p>
                </div>
 
                <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-12 d-flex justify-content-center">
                          <ul id="portfolio-flters">
                               <li data-filter="*" class="filter-active">All</li>
-                              <li data-filter=".filter-app">App</li>
-                              <li data-filter=".filter-card">Card</li>
-                              <li data-filter=".filter-web">Web</li>
+                              <li data-filter=".filter-app">Vitamins</li>
+                              <li data-filter=".filter-card">Supplements</li>
+                              <li data-filter=".filter-web">Events</li>
                          </ul>
                     </div>
                </div>
@@ -259,12 +265,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                          <div class="portfolio-wrap">
-                              <img src="~/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                              <img src="~/assets/img/shop/b-vitamin.png" class="img-fluid" alt="">
                               <div class="portfolio-info">
                                    <h4>App 1</h4>
                                    <p>App</p>
                                    <div class="portfolio-links">
-                                        <a href="~/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                        <a href="~/assets/img/shop/omega3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
                                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                    </div>
                               </div>
@@ -273,12 +279,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                          <div class="portfolio-wrap">
-                              <img src="~/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                              <img src="~/assets/img/shop/protein.png" class="img-fluid" alt="">
                               <div class="portfolio-info">
                                    <h4>Web 3</h4>
                                    <p>Web</p>
                                    <div class="portfolio-links">
-                                        <a href="~/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                                        <a href="~/assets/img/shop/shop2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
                                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                    </div>
                               </div>
@@ -287,12 +293,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                          <div class="portfolio-wrap">
-                              <img src="~/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                              <img src="~/assets/img/shop/creatine.png" class="img-fluid" alt="">
                               <div class="portfolio-info">
                                    <h4>App 2</h4>
                                    <p>App</p>
                                    <div class="portfolio-links">
-                                        <a href="~/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                                        <a href="~/assets/img/shop/bottle.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
                                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                    </div>
                               </div>
@@ -301,12 +307,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                          <div class="portfolio-wrap">
-                              <img src="~/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                              <img src="~/assets/img/shop/b-vitamin.png" class="img-fluid" alt="">
                               <div class="portfolio-info">
                                    <h4>Card 2</h4>
                                    <p>Card</p>
                                    <div class="portfolio-links">
-                                        <a href="~/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                                        <a href="~/assets/img/shop/bras.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
                                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                    </div>
                               </div>
@@ -315,12 +321,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                          <div class="portfolio-wrap">
-                              <img src="~/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                              <img src="~/assets/img/shop/dieta grea.jpg" class="img-fluid" alt="">
                               <div class="portfolio-info">
                                    <h4>Web 2</h4>
                                    <p>Web</p>
                                    <div class="portfolio-links">
-                                        <a href="~/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                                        <a href="~/assets/img/shop/complex.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
                                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                    </div>
                               </div>
@@ -329,12 +335,12 @@
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                          <div class="portfolio-wrap">
-                              <img src="~/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                              <img src="~/assets/img/shop/tracker.png" class="img-fluid" alt="">
                               <div class="portfolio-info">
                                    <h4>App 3</h4>
                                    <p>App</p>
                                    <div class="portfolio-links">
-                                        <a href="~/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                                        <a href="~/assets/img/shop/bras.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
                                         <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                    </div>
                               </div>
@@ -386,7 +392,9 @@
                </div>
 
           </div>
-     </section><!-- End Portfolio Section -->
+     </section>*@<!-- End Portfolio Section -->
+
+
      <!-- ======= Counts Section ======= -->
      <section id="counts" class="counts">
           <div class="container" data-aos="fade-up">
