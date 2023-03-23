@@ -406,7 +406,8 @@
     <Content Include="Views\Home\Event.cshtml" />
     <Content Include="Views\Home\Nutrition.cshtml" />
     <Content Include="Views\Home\Vitamins.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\LoginPage.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -416,7 +417,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Register\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EasyBreath.BussinessLogic\EasyBreath.BussinessLogic.csproj">
