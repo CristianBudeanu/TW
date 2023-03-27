@@ -1,54 +1,66 @@
 ﻿
 @{
-     ViewBag.Title = "Vitamins";
-     Layout = "~/Views/_LayoutPage1.cshtml";
+    ViewBag.Title = "Vitamins";
+    Layout = "~/Views/_LayoutPage1.cshtml";
 }
 <section id="breadcrumbs" class="breadcrumbs">
-     <div class="container">
+    <div class="container">
 
-          <div class="d-flex justify-content-between align-items-center">
-               <h2>Vitamins</h2>
-               <ol>
-                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li>Vitamins</li>
-               </ol>
-          </div>
-
-     </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2><b>Vitamins</b></h2>
+            <p align="center"> Vitamins are your best friends in life</p>
+            <ol>
+                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                <li>Vitamins</li>
+            </ol>
+        </div>
+        <header>
+            <nav>
+                <hr width="100%" size="3" noshade>
+                <p style="color:black;" align="center">
+                    Stay healthy with <a href="#vitamins">&emsp;Vitamins</a>
+                    <a href="#supplements">&emsp;Supplements</a>
+                </p>
+            </nav>
+        </header>
+    </div>
 </section>
 
 <section>
-     <header>
-          <h1>Vitamins and Supplements for a Healthy Life</h1>
-          <nav>
-               <ul>
-                    <li><a href="#vitamins">Vitamins</a></li>
-                    <li><a href="#supplements">Supplements</a></li>
-               </ul>
-          </nav>
-     </header>
-     <main>
-          <section id="vitamins">
-               <h2>Vitamins</h2>
-               <p>Vitamins are essential nutrients that our bodies need to function properly. Here are some of the most important vitamins:</p>
-               <ul>
-                    <li>Vitamin A</li>
-                    <li>Vitamin C</li>
-                    <li>Vitamin D</li>
-                    <li>Vitamin E</li>
-                    <li>Vitamin K</li>
-               </ul>
-          </section>
-          <section id="supplements">
-               <h2>Supplements</h2>
-               <p>Supplements can help fill in any nutritional gaps in your diet. Here are some popular supplements:</p>
-               <ul>
-                    <li>Probiotics</li>
-                    <li>Omega-3 fatty acids</li>
-                    <li>Calcium</li>
-                    <li>Magnesium</li>
-                    <li>Vitamin B12</li>
-               </ul>
-          </section>
-     </main>
+    <header>
+        <main>
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <section id="vitamins">
+                        <div class="image-box">
+                            <img src="~/assets/img/Vitamins/vita.png" style="float:left; padding-right: 25px;" width="400" height="400" />
+                            <h4 style="color: #fcc454;">Vitamins</h4>
+                            <p>Vitamins are essential nutrients that our bodies need to function properly. Here are some of the most important vitamins:</p>
+                            <ul>
+                                <li>Vitamin A</li>
+                                <li>Vitamin C</li>
+                                <li>Vitamin D</li>
+                                <li>Vitamin E</li>
+                                <li>Vitamin K</li>
+                            </ul>
+                            <p>We need vitamins because they are essential for various biological functions in our body, including maintaining healthy immune function, supporting growth and development, aiding in energy production, and preventing various deficiencies and health conditions.</p>
+                        </div>
+                    </section>
+
+                    <section id="supplements">
+                        <div class="image-box">
+                            <img src="~/assets/img/Vitamins/supl.jpg" style="float:right; padding-left: 100px;" width="500" height="500" />
+                            <h4 style="color: #fcc454;">Supplements</h4>
+                            <p>Supplements can help fill in any nutritional gaps in your diet. Here are some popular supplements:</p>
+                            <ul>
+                                <li>Probiotics</li>
+                                <li>Omega-3 fatty acids</li>
+                                <li>Calcium</li>
+                                <li>Magnesium</li>
+                                <li>Vitamin B12</li>
+                            </ul>
+                            <p>We may need food supplements to fill in nutritional gaps and support our overall health and well-being, especially if our diet is lacking in certain nutrients or if we have specific health conditions that require additional nutrient support.</p>
+                        </div>
+                    </section>
+        </main>
 </section>
