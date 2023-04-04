@@ -10,9 +10,9 @@ namespace EasyBreath.BussinessLogic.Interfaces
 {
      public interface ISession
      {
-          CookieResponse GenCookie(UCookieData utoken);
           ServiceResponse ValidateUserCredential(ULoginData user);
           ServiceResponse ValidateNewPassword(UChangePasswordData password);
+          //ServiceResponse ValidateUserRegister(URegisterData newUser);
 
      }
 }

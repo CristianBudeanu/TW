@@ -7,3 +7,8 @@ D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.Bussine
 D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.csproj.CopyComplete
 D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.dll
 D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.pdb
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.BussinessLogic.dll.config
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.xml
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.SqlServer.xml
