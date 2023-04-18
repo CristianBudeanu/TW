@@ -16,7 +16,7 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
                
           }
-          public virtual DbSet<UDbModel> Users { get; set; }
+          public DbSet<UDbModel> Users { get; set; }
 
      }
 }

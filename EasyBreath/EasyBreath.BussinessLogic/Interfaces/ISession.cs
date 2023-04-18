@@ -12,7 +12,9 @@ namespace EasyBreath.BussinessLogic.Interfaces
      {
           ServiceResponse ValidateUserCredential(ULoginData user);
           ServiceResponse ValidateNewPassword(UChangePasswordData password);
-          //ServiceResponse ValidateUserRegister(URegisterData newUser);
+          ServiceResponse ValidateUserRegister(URegisterData newUuser);
+          CookieResponse GenCookie(string username);
+          //object GetUserByCookie(string value);
 
      }
 }

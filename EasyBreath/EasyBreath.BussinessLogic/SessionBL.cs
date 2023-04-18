@@ -17,15 +17,20 @@ namespace EasyBreath.BussinessLogic
                return ReturnCredentialStatus(user);
           }
 
+          public ServiceResponse ValidateUserRegister(URegisterData user)
+          {
+               return ReturnRegisterStatus(user);
+          }
+
           public ServiceResponse ValidateNewPassword(UChangePasswordData password)
           {
                return ReturnPasswordStatus(password);
           }
 
-          //public ServiceResponse ValidateUserRegister(URegisterData newUser)
-          //{
-          //     return ReturnRegisterStatus(newUser);
-          //}
+          public CookieResponse GenCookie(string username)
+          {
+               return CookieGeneratorAction(username);
+          }
 
 
      }

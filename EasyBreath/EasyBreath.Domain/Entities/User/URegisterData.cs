@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace EasyBreath.Domain.Entities.User
 {
-     public class ULoginData
+     public class URegisterData
      {
           public string Username { get; set; }
           public string Password { get; set; }
-          public DateTime LoginDateTime { get; set; }
+          public string Email { get; set; }
+          public DateTime RegisterDateTime { get; set; }
      }
 }

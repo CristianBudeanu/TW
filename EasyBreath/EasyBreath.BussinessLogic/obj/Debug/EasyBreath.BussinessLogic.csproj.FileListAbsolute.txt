@@ -12,3 +12,5 @@ D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.dl
 D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.SqlServer.dll
 D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.xml
 D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Helpers.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Helpers.pdb
