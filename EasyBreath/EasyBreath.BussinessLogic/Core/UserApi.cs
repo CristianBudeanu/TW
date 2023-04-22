@@ -137,5 +137,40 @@ namespace EasyBreath.BussinessLogic.Core
                     Data = DateTime.Now
                };
           }
+          public UserMinimal UserCookie(string cookie)
+          {
+               SDbModel session;
+               UDbModel currentUser;
+
+               using (var db = new SessionContext())
+               {
+                    session = db.Sessions.FirstOrDefault(s => s.CookieString == cookie && s.ExpireTime > DateTime.Now);
+               }
+
+               if (session == null) return null;
+               using (var db = new UserContext())
+               {
+                    var validate = new EmailAddressAttribute();
+                    if (validate.IsValid(session.Username))
+                    {
+                         currentUser = db.Users.FirstOrDefault(u => u.Email == session.Username);
+                    }
+                    else
+                    {
+                         currentUser = db.Users.FirstOrDefault(u => u.Username == session.Username);
+                    }
+               }
+
+               if (currentUser == null) return null;
+
+               var userMinimal = new UserMinimal
+               {
+                    Id = currentUser.Id,
+                    Username = currentUser.Username,
+                    Email = currentUser.Email,
+                    Level = currentUser.AccessLevel
+               };
+               return userMinimal;
+          }
      }
 }

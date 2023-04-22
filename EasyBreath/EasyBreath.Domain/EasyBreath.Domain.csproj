@@ -52,6 +52,7 @@
     <Compile Include="Entities\User\UDbModel.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\URegisterData.cs" />
+    <Compile Include="Entities\User\UserMinimal.cs" />
     <Compile Include="Enum\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
