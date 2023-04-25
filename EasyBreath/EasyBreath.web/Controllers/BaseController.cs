@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using EasyBreath.web.Extensions;
 
 namespace EasyBreath.web.Controllers
-
+{ 
 public class BaseController : Controller
 {
      private readonly ISession _session;
@@ -47,5 +47,7 @@ public class BaseController : Controller
           {
                System.Web.HttpContext.Current.Session["LoginStatus"] = "logout";
           }
-     }
+      }
+   }
 }
+
