@@ -1,0 +1,16 @@
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.BussinessLogic.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.BussinessLogic.pdb
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Domain.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Domain.pdb
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.csproj.AssemblyReference.cache
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.csproj.CoreCompileInputs.cache
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.csproj.CopyComplete
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\obj\Debug\EasyBreath.BussinessLogic.pdb
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.BussinessLogic.dll.config
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.xml
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Helpers.dll
+D:\projects\TW\EasyBreath\EasyBreath.BussinessLogic\bin\Debug\EasyBreath.Helpers.pdb
