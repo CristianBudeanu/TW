@@ -15,6 +15,6 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
 
           }
-          public virtual DbSet<Diet> Diets { get; set; }
+          public virtual DbSet<Vitamin> Vitamins { get; set; }
      }
 }

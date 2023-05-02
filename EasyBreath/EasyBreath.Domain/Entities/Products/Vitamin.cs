@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EasyBreath.Domain.Entities.Products
 {
-     public class Diet
+     public class Vitamin
      {
           [Key]
           [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

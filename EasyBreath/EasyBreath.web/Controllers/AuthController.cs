@@ -14,7 +14,7 @@ using System.Web.SessionState;
 
 namespace EasyBreath.web.Controllers
 {
-     public class AuthController : Controller
+     public class AuthController : BaseController
      {
           private readonly ISession _session;
 
@@ -82,12 +82,14 @@ namespace EasyBreath.web.Controllers
                          if (cookieResponse != null)
                          {
                               ControllerContext.HttpContext.Response.Cookies.Add(cookieResponse.Cookie);
+                              SessionStatus();
                               return RedirectToAction("Index", "Home");
                          }
                          else
                          {
                               throw new Exception();
                          }
+                         
                     }
                     else
                     {
@@ -99,10 +101,28 @@ namespace EasyBreath.web.Controllers
                return View();
           }
 
-          [HttpGet]
-          public ActionResult Login()
+          //[HttpGet]
+          //public ActionResult Login()
+          //{
+          //     return View(new LoginForm());
+          //}
+
+          public ActionResult Logout() 
           {
-               return View(new LoginForm());
+               System.Web.HttpContext.Current.Session.Clear();
+               if (ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains("X-KEY"))
+               {
+                    var cookie = ControllerContext.HttpContext.Request.Cookies["X-KEY"];
+                    if (cookie != null)
+                    {
+                         cookie.Expires = DateTime.Now.AddDays(-1);
+                         ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    }
+               }
+
+               System.Web.HttpContext.Current.Session["LoginStatus"] = "logout";
+
+               return RedirectToAction("Index", "Home");
           }
 
      }

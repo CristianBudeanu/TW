@@ -33,11 +33,6 @@ namespace EasyBreath.BussinessLogic.Core
                return new ServiceResponse { Status = true, StatusMessage = string.Empty };
           }
 
-          //public CookieResponse ReturnSessionCookie(UCookieData utoken)
-          //{
-          //     return new CookieResponse { Data = DateTime.Now, Cookie = "name=EasyBreathDB" };
-          //}
-
           public ServiceResponse ReturnPasswordStatus(UChangePasswordData password)
           {
                return new ServiceResponse { Status = true, StatusMessage = "Password has been changed succesfully!" };
