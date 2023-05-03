@@ -1,4 +1,4 @@
-﻿using EasyBreath.Domain.Entities.Products;
+﻿//using EasyBreath.Domain.Entities.Products;
 using EasyBreath.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,6 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
 
           }
-          public virtual DbSet<Vitamin> Vitamins { get; set; }
+          //public virtual DbSet<Vitamin> Vitamins { get; set; }
      }
 }

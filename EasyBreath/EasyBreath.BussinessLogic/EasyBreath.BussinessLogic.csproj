@@ -67,16 +67,6 @@
     <Compile Include="SessionBL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EasyBreath.Domain\EasyBreath.Domain.csproj">
-      <Project>{C1CFC85D-D9AA-497D-BA22-512A8BAD1386}</Project>
-      <Name>EasyBreath.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EasyBreath.Helpers\EasyBreath.Helpers.csproj">
-      <Project>{78FBC0E0-DAA9-41D2-A378-20FAAE175FBC}</Project>
-      <Name>EasyBreath.Helpers</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -89,6 +79,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DBModel\Seed\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyBreath.Domain\EasyBreath.Domain.csproj">
+      <Project>{c1cfc85d-d9aa-497d-ba22-512a8bad1386}</Project>
+      <Name>EasyBreath.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyBreath.Helpers\EasyBreath.Helpers.csproj">
+      <Project>{78fbc0e0-daa9-41d2-a378-20faae175fbc}</Project>
+      <Name>EasyBreath.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
