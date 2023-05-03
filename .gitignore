@@ -1,9 +1,17 @@
-EasyBreath/.vs/
-EasyBreath/EasyBreath.web/bin/
-EasyBreath/EasyBreath.web/obj/
-EasyBreath/EasyBreath.Domain/bin
-EasyBreath/EasyBreath.Domain/obj
-EasyBreath/EasyBreath.BussinessLogic/bin
-EasyBreath/EasyBreath.BussinessLogic/obj
-EasyBreath/EasyBreath.Helpers/bin
-EasyBreath/EasyBreath.Helpers/obj
+/EasyBreath/.vs/
+/EasyBreath/EasyBreath.web/bin/
+/EasyBreath/EasyBreath.web/obj/
+/EasyBreath/EasyBreath.Domain/bin
+/EasyBreath/EasyBreath.Domain/obj
+/EasyBreath/EasyBreath.BussinessLogic/bin
+/EasyBreath/EasyBreath.BussinessLogic/obj
+/EasyBreath/EasyBreath.Helpers/bin
+/EasyBreath/EasyBreath.Helpers/obj
+/EasyBreath/EasyBreath.BussinessLogic/EasyBreath.BussinessLogic.csproj
+
+/EasyBreath/EasyBreath.web/App_Data/EasyBreathDB.mdf
+
+# SQL Server files
+.mdf
+.ldf
+.ndf
