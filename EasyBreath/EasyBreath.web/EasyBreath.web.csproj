@@ -398,7 +398,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -418,7 +417,8 @@
     <Content Include="Views\Home\LoginPage.cshtml" />
     <Content Include="Views\Auth\LoginPage.cshtml" />
     <Content Include="Views\Auth\RegisterPage.cshtml" />
-    <Content Include="Views\_LayoutPage2.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
