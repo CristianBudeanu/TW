@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EasyBreath.Domain.Entities.User;
 using System.Data.Entity;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using EasyBreath.Domain.Entities;
-using EasyBreath.Domain.Entities.User;
 
 namespace EasyBreath.BussinessLogic.DBModel
 {
@@ -14,9 +7,8 @@ namespace EasyBreath.BussinessLogic.DBModel
      {
           public UserContext() : base("name=EasyBreathDB")
           {
-               
+
           }
           public DbSet<UDbModel> Users { get; set; }
-
      }
 }

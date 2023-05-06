@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Products\Product.cs" />
     <Compile Include="Entities\Response\CookieResponse.cs" />
     <Compile Include="Entities\Response\ServiceResponse.cs" />
     <Compile Include="Entities\Session\SDbModel.cs" />
@@ -55,8 +56,6 @@
     <Compile Include="Enum\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\Products\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
