@@ -1,13 +1,13 @@
-﻿
+﻿@using EasyBreath.web.Extensions
 @{
      ViewBag.Title = "Event";
-     Layout = "~/Views/_LayoutPage1.cshtml";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<section id="breadcrumbs" class="breadcrumbs">
-     <div class="container">
+<section id="breadcrumbs" class="breadcrumbs" style="margin-top: 69px">
+     <div class="container text-register">
 
           <div class="d-flex justify-content-between align-items-center">
-               <h2>Event</h2>
+               <h2 class="page-title">Event</h2>
                <ol>
                     <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                     <li>Event</li>
@@ -44,9 +44,9 @@
           </div>
      </section>
      <section>
-          <div class="container" data-aos="fade-up">
+          <div class="container text-register" data-aos="fade-up">
                <h2 style="text-align: center">Schedule</h2>
-               <table class="table">
+               <table class="table text-register">
                     <tr>
                          <th>Time</th>
                          <th>Activity</th>
@@ -79,25 +79,36 @@
           </div>
      </section>
 
-     <section id="register" style="background-color: #ffc93c">
-          <div class="container" data-aos="fade-up" style="text-align: center">
-               <h2>Register</h2>
-               <p>To register for the event, please fill out the form below:</p>
-               <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required><br>
+     <section id="register">
+          <div class="container text-register" data-aos="fade-up" style="text-align: center">
+               @*<label for="name">Name:</label>
+               <input type="text" id="name" name="name" required><br>*@
 
-                    <label style="margin-top: 10px" for="email">Email:</label>
-                    <input type="email" id="email" name="email" required><br>
+               @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+               {
+                    <h2>Register</h2>
+                    <p>To register for the event, please fill out the form below:</p>
+                    <form>
+                         <label for="name">First name:</label>
+                         <input type="text" id="name" name="name"><br>
 
-                    <label style="margin-top: 10px" for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone"><br>
+                         <label style="margin-top: 10px" for="email">Email:</label>
+                         <input type="email" id="email" name="email" required><br>
 
-                    <label style="margin-top: 10px" for="attendees">Number of Attendees:</label>
-                    <input type="number" id="attendees" name="attendees" min="1" max="10" required><br>
+                         <label style="margin-top: 10px" for="phone">Phone:</label>
+                         <input type="tel" id="phone" name="phone"><br>
 
-                    <input type="submit" value="Register">
-               </form>
+                         <label style="margin-top: 10px" for="attendees">Number of Attendees:</label>
+                         <input type="number" id="attendees" name="attendees" min="1" max="10" required><br>
+
+                         <input type="submit" value="Register">
+                    </form>
+               }
+               else
+               {
+                    <h3 style="color: #026773">To register for the event, you need to log in first!</h3>
+                    <a href="@Url.Action("LoginPage", "Auth")" class="get-started-btn">Login</a>
+               }
           </div>
      </section>
 

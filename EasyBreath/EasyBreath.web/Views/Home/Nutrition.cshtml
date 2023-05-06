@@ -1,12 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Nutrition";
-    Layout = "~/Views/_LayoutPage1.cshtml";
+     ViewBag.Title = "Nutrition";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<section id="breadcrumbs" class="breadcrumbs">
-    <div class="container">
+<section id="breadcrumbs" class="breadcrumbs" style="margin-top: 69px">
+    <div class="container text-register">
         <div class="d-flex justify-content-between align-items-center">
-            <h2>Nutrition</h2>
+            <h2 class="page-title">Nutrition</h2>
             <ol>
                 <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                 <li>Nutrition</li>
@@ -42,17 +42,18 @@
 </section><!-- End nutriton Section -->
 <!-- Food groups Section -->
 <section>
-    <div class="container" data-aos="fade-up">
+    <div class="container text-register" data-aos="fade-up">
         <h2 style="margin-top: 30px; text-align: center">Food groups</h2>
         <p class="fst-italic" style="text-align: center">A healthy diet includes a variety of foods from each of the following food groups:</p>
         <div class="products">
+
             <div class="product">
                 <img src="~/assets/img/nutrition/image1.png" alt="Nutrition Image">
                 <h2>Vegetables and fruits</h2>
                 <p>It can lower blood pressure, reduce the risk of heart disease,
                 prevent some types of cancer, lower risk of eye and digestive problems.</p>
                 <a href=@Url.Action("Shop", "Home")>
-                    <button style="background-color: #026773; margin-top:30px;">Go to shop</button>
+                    <button class="page-title" style=" margin-top:30px;">Go to shop</button>
                 </a>
             </div>
 
@@ -63,7 +64,7 @@
                     It is a good source of many minerals, such as iron, magnesium, copper, phosphorus and zinc.
                 </p>
                 <a href=@Url.Action("Shop", "Home")>
-                    <button style="background-color: #026773; margin-top: 30px;">Go to shop</button>
+                    <button class="page-title" style=" margin-top: 54px;">Go to shop</button>
                 </a>
             </div>
 
@@ -74,7 +75,7 @@
                     Protein is considered the building block of life and is found in every cell of the body.
                 </p>
                 <a href=@Url.Action("Shop", "Home")>
-                    <button style="background-color: #026773; margin-top: 30px;">Go to shop</button>
+                    <button class="page-title" style="margin-top: 20px;">Go to shop</button>
                 </a>
             </div>
 
@@ -85,7 +86,7 @@
                     Keep muscles, bones, nerves, teeth, skin and vision healthy.
                 </p>
                 <a href=@Url.Action("Shop", "Home")>
-                    <button style="background-color: #026773; margin-top: 30px;">Go to shop</button>
+                    <button class="page-title" style="margin-top: 101px;">Go to shop</button>
                 </a>
             </div>
 
