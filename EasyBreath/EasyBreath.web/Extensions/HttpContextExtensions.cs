@@ -1,7 +1,4 @@
 ﻿using EasyBreath.Domain.Entities.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 namespace EasyBreath.web.Extensions
@@ -11,18 +8,12 @@ namespace EasyBreath.web.Extensions
           public static UserMinimal GetMySessionObject(this HttpContext current)
           {
                return (UserMinimal)current?.Session["__SessionObject"];
-               
+
           }
 
           public static void SetMySessionObject(this HttpContext current, UserMinimal profile)
           {
                current.Session.Add("__SessionObject", profile);
-          }
-
-          public static bool IsUserLoggedIn(this HttpContext httpContext)
-          {
-               var loginStatus = httpContext.Session["LoginStatus"];
-               return loginStatus != null && loginStatus.ToString() == "login";
           }
      }
 }

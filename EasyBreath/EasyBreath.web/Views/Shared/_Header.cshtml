@@ -43,6 +43,11 @@
           {
                <div style="color:red" class="user_name">@System.Web.HttpContext.Current.GetMySessionObject().Username</div>
                <a href="@Url.Action("Logout", "Auth")" class="button">Logout</a>
+               <a href="@Url.Action("Profile", "Users")" class="button">Profile</a>
+               if (System.Web.HttpContext.Current.GetMySessionObject().Level == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+               {
+                    <a href="@Url.Action("Index", "Users")" class="button">AllUsers</a>
+               }
           }
           else
           {

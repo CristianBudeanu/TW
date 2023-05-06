@@ -1,15 +1,9 @@
 ﻿using EasyBreath.BussinessLogic.Interfaces;
-using EasyBreath.Domain.Entities.Response;
 using EasyBreath.Domain.Entities.User;
 using EasyBreath.web.Models;
-using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.SessionState;
 
 
 namespace EasyBreath.web.Controllers
@@ -40,7 +34,7 @@ namespace EasyBreath.web.Controllers
                     {
                          Username = data.Username,
                          Password = data.Password,
-                         Email = data.Email, 
+                         Email = data.Email,
                     };
 
                     var response = _session.ValidateUserRegister(uRegister);
@@ -89,7 +83,7 @@ namespace EasyBreath.web.Controllers
                          {
                               throw new Exception();
                          }
-                         
+
                     }
                     else
                     {
@@ -107,7 +101,7 @@ namespace EasyBreath.web.Controllers
           //     return View(new LoginForm());
           //}
 
-          public ActionResult Logout() 
+          public ActionResult Logout()
           {
                System.Web.HttpContext.Current.Session.Clear();
                if (ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains("X-KEY"))

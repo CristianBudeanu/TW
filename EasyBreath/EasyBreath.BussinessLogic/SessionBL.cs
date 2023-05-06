@@ -2,11 +2,6 @@
 using EasyBreath.BussinessLogic.Interfaces;
 using EasyBreath.Domain.Entities.Response;
 using EasyBreath.Domain.Entities.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyBreath.BussinessLogic
 {
@@ -35,6 +30,15 @@ namespace EasyBreath.BussinessLogic
           public UserMinimal GetUserByCookie(string apiCookieValue)
           {
                return UserCookie(apiCookieValue);
+          }
+          public ServiceResponse ValidateEditUser(UDbModel data)
+          {
+               return ReturnEditUserStatus(data);
+          }
+
+          public ServiceResponse ValidateDeleteUser(UDbModel user)
+          {
+               return ReturnDeleteUserStatus(user);
           }
 
 

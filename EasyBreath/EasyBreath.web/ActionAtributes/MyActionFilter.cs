@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace EasyBreath.web.AtionAtributes
 {
@@ -10,12 +6,13 @@ namespace EasyBreath.web.AtionAtributes
      {
           public override void OnActionExecuting(ActionExecutingContext filterContext)
           {
-               
+
+
           }
 
           public override void OnActionExecuted(ActionExecutedContext filterContext)
           {
-               
+
           }
      }
 }
