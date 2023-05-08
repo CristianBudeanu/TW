@@ -2,48 +2,66 @@
 @using EasyBreath.web.Extensions
 
 @{
-     Layout = null;
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<section id="breadcrumbs" class="breadcrumbs" style="margin-top: 60px">
+     <div class="container text-register">
+          <div class="d-flex justify-content-between align-items-center">
+               <h2 class="page-title" style="text-align: center">Users</h2>
+               <ol>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li>Users</li>
+               </ol>
+          </div>
 
+     </div>
+</section>
 
-<table border="1" cellspacing="0">
-     <tr>
-          <th>
-               @Html.DisplayNameFor(model => model[0].Username)
-          </th>
-          <th>
-               @Html.DisplayNameFor(model => model[0].Email)
-          </th>
-          <th></th>
-     </tr>
+<section class="text-register">
+     <section class="container text-register" style="margin-left: 290px; margin-top: -90px">
+          <table border="1" cellspacing="0" style="border-color: #026773" class="col-md-8">
+               <tr>
+                    <th>
+                         @Html.DisplayNameFor(model => model[0].Username)
+                    </th>
+                    <th>
+                         @Html.DisplayNameFor(model => model[0].Email)
+                    </th>
+                    <th>
+                         @Html.DisplayNameFor(model => model[0].AccessLevel)    
+                    </th>
+                    <th>
+                         @Html.DisplayName("Function")
+                    </th>
+               </tr>
 
-     @foreach (var item in Model)
-     {
-          <tr>
-               <td>
-                    @Html.DisplayFor(modelItem => item.Username)
-               </td>
-               <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-               </td>
-               <td>
-                    @Html.DisplayFor(modelItem => item.AccessLevel)
-               </td>
-               @if (System.Web.HttpContext.Current.GetMySessionObject().Level == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
-               { 
-                    <td>
-                        
-                              @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                              @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-               
-                    </td>
+               @foreach (var item in Model)
+               {
+                    <tr>
+                         <td>
+                              @Html.DisplayFor(modelItem => item.Username)
+                         </td>
+                         <td>
+                              @Html.DisplayFor(modelItem => item.Email)
+                         </td>
+                         <td>
+                              @Html.DisplayFor(modelItem => item.AccessLevel)
+                         </td>
+                         @if (System.Web.HttpContext.Current.GetMySessionObject().Level == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+                         {
+                              <td>
+
+                                   @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                   @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+                              </td>
+                         }
+                    </tr>
                }
-          </tr>
-     }
 
-</table>
+          </table>
 
+     </section>
 
-
-
+</section>
