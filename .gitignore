@@ -8,7 +8,7 @@ EasyBreath/EasyBreath.BussinessLogic/obj
 EasyBreath/EasyBreath.Helpers/bin
 EasyBreath/EasyBreath.Helpers/obj
 /EasyBreath/EasyBreath.BussinessLogic/EasyBreath.BussinessLogic.csproj
-
+EasyBreath/packages/
 /EasyBreath/EasyBreath.web/App_Data/EasyBreathDB.mdf
 
 # SQL Server files
@@ -16,3 +16,4 @@ EasyBreath/EasyBreath.Helpers/obj
 .ldf
 .ndf
 /EasyBreath/EasyBreath.web/App_Data/EasyBreathDB_log.ldf
+
