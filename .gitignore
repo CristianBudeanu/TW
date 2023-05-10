@@ -7,3 +7,12 @@ EasyBreath/EasyBreath.BussinessLogic/bin
 EasyBreath/EasyBreath.BussinessLogic/obj
 EasyBreath/EasyBreath.Helpers/bin
 EasyBreath/EasyBreath.Helpers/obj
+/EasyBreath/EasyBreath.BussinessLogic/EasyBreath.BussinessLogic.csproj
+
+/EasyBreath/EasyBreath.web/App_Data/EasyBreathDB.mdf
+
+# SQL Server files
+.mdf
+.ldf
+.ndf
+/EasyBreath/EasyBreath.web/App_Data/EasyBreathDB_log.ldf
