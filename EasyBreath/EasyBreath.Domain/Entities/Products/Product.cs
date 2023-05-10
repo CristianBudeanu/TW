@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EasyBreath.Domain.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace EasyBreath.Domain.Entities.Products
 {
-     public class Diet
+     public class Product
      {
           [Key]
           [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,8 +13,11 @@ namespace EasyBreath.Domain.Entities.Products
           [Required]
           public string Name { get; set; }
           [Required]
-          public string Price { get; set; }
+          public decimal Price { get; set; }
           [Required]
-          public string Description { get; set; }
+          public int Amount { get; set; }
+          [Required]
+          public string Thumbnail { get; set; }
+
      }
 }

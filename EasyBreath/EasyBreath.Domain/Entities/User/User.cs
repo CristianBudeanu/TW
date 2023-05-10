@@ -1,17 +1,16 @@
 ﻿using EasyBreath.Domain.Enum;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EasyBreath.Domain.Entities.User
 {
-     public class UDbModel
+     public class User
      {
-
           [Key]
           [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
           public int Id { get; set; }
@@ -30,8 +29,5 @@ namespace EasyBreath.Domain.Entities.User
 
           [Required]
           public URole AccessLevel { get; set; }
-
-
-
      }
 }
