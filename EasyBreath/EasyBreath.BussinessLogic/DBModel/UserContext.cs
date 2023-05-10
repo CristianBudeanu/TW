@@ -9,6 +9,6 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
 
           }
-          public DbSet<UDbModel> Users { get; set; }
+          public DbSet<User> Users { get; set; }
      }
 }

@@ -10,6 +10,6 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
 
           }
-          public virtual DbSet<Product> Vitamins { get; set; }
+          public virtual DbSet<Product> Products { get; set; }
      }
 }

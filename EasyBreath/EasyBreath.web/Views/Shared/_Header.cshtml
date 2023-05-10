@@ -130,7 +130,7 @@
             if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
             {
                 <a href="@Url.Action("Profile", "Users")" class="user_name; btn btn-dark">@System.Web.HttpContext.Current.GetMySessionObject().Username</a>
-                if (System.Web.HttpContext.Current.GetMySessionObject().Level == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+                if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
                 {
                     <a href="@Url.Action("Index", "Users")" class="get-started-btn">AllUsers</a>
                 }

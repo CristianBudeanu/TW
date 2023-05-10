@@ -8,5 +8,13 @@ namespace EasyBreath.BussinessLogic
           {
                return new SessionBL();
           }
+          public IProduct GetProductBL()
+          {
+               return new ProductBL();
+          }
+          public IUser GetUsertBL()
+          {
+               return new UserBL();
+          }
      }
 }

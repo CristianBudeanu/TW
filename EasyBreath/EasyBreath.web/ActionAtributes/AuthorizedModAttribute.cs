@@ -7,11 +7,11 @@ using System.Web.Routing;
 
 namespace EasyBreath.web.ActionAtributes
 {
-     public class AdminModAttribute : ActionFilterAttribute
+     public class AuthorizedModAttribute : ActionFilterAttribute
      {
           private readonly ISession _sessionBusinessLogic;
 
-          public AdminModAttribute()
+          public AuthorizedModAttribute()
           {
                var businessLogic = new BussinessLogic.BusinessLogic();
                _sessionBusinessLogic = businessLogic.GetSessionBL();
@@ -23,7 +23,7 @@ namespace EasyBreath.web.ActionAtributes
                if (apiCookie != null)
                {
                     var profile = _sessionBusinessLogic.GetUserByCookie(apiCookie.Value);
-                    if (profile != null && profile.AccessLevel == URole.ADMINISTRATOR)
+                    if (profile != null)
                     {
                          HttpContext.Current.SetMySessionObject(profile);
                     }

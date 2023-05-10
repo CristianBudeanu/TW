@@ -1,18 +1,16 @@
-﻿using EasyBreath.Domain.Entities.Response;
+﻿using EasyBreath.Domain.Entities.Products;
+using EasyBreath.Domain.Entities.Response;
 using EasyBreath.Domain.Entities.User;
+using static EasyBreath.BussinessLogic.Core.ProductApi;
+using static EasyBreath.BussinessLogic.Core.SessionApi;
 
 namespace EasyBreath.BussinessLogic.Interfaces
 {
      public interface ISession
      {
-          ServiceResponse ValidateUserCredential(ULoginData user);
-          ServiceResponse ValidateNewPassword(UChangePasswordData password);
-          ServiceResponse ValidateUserRegister(URegisterData newUuser);
+          ServiceResponse ValidateUserCredential(LoginData user);
+          ServiceResponse ValidateUserRegister(RegisterData newUuser);
           CookieResponse GenCookie(string username);
-          UserMinimal GetUserByCookie(string value);
-          
-          ServiceResponse ValidateEditUser(UDbModel user);
-          ServiceResponse ValidateDeleteUser(UDbModel user);
-
+          User GetUserByCookie(string value);
      }
 }

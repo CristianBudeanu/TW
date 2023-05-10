@@ -1,10 +1,12 @@
 ﻿using EasyBreath.BussinessLogic.Interfaces;
 using EasyBreath.Domain.Entities.User;
+using EasyBreath.web.ActionAtributes;
+using EasyBreath.web.Extensions;
 using EasyBreath.web.Models;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-
+using static EasyBreath.BussinessLogic.Core.SessionApi;
 
 namespace EasyBreath.web.Controllers
 {
@@ -30,7 +32,7 @@ namespace EasyBreath.web.Controllers
           {
                if (ModelState.IsValid)
                {
-                    URegisterData uRegister = new URegisterData
+                    RegisterData uRegister = new RegisterData
                     {
                          Username = data.Username,
                          Password = data.Password,
@@ -40,7 +42,7 @@ namespace EasyBreath.web.Controllers
                     var response = _session.ValidateUserRegister(uRegister);
                     if (response.Status)
                     {
-                         return RedirectToAction("Index", "Home");
+                         return RedirectToAction("LoginPage", "Auth");
                     }
                     else
                     {
@@ -62,21 +64,22 @@ namespace EasyBreath.web.Controllers
           {
                if (ModelState.IsValid)
                {
-                    ULoginData uLogin = new ULoginData
+                    LoginData uLogin = new LoginData
                     {
                          Username = data.Username,
                          Password = data.Password,
-                         LoginDateTime = DateTime.Now,
+                         Time = DateTime.Now,
                     };
 
                     var response = _session.ValidateUserCredential(uLogin);
+                    SessionStatus();
                     if (response.Status)
                     {
+                         
                          var cookieResponse = _session.GenCookie(data.Username);
                          if (cookieResponse != null)
                          {
                               ControllerContext.HttpContext.Response.Cookies.Add(cookieResponse.Cookie);
-                              SessionStatus();
                               return RedirectToAction("Index", "Home");
                          }
                          else
@@ -96,12 +99,7 @@ namespace EasyBreath.web.Controllers
                return View();
           }
 
-          //[HttpGet]
-          //public ActionResult Login()
-          //{
-          //     return View(new LoginForm());
-          //}
-
+          [AuthorizedMod]
           public ActionResult Logout()
           {
                System.Web.HttpContext.Current.Session.Clear();

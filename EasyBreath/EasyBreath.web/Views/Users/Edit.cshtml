@@ -1,45 +1,45 @@
-﻿@model EasyBreath.Domain.Entities.User.UDbModel
+﻿@model EasyBreath.Domain.Entities.User.User
 @using EasyBreath.web.Extensions
 
 @{
      Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-     <section id="breadcrumbs" class="breadcrumbs" style="margin-top: 60px">
-          <div class="container text-register">
-               <div class="d-flex justify-content-between align-items-center">
-                    <h2 class="page-title">Edit Profile</h2>
-                    <ol>
-                         <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                         <li>Edit</li>
-                    </ol>
+<section id="breadcrumbs" class="breadcrumbs" style="margin-top: 60px">
+     <div class="container text-register">
+          <div class="d-flex justify-content-between align-items-center">
+               <h2 class="page-title">Edit Profile</h2>
+               <ol>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li>Edit</li>
+               </ol>
+          </div>
+
+     </div>
+</section>
+<section>
+     @using (Html.BeginForm())
+     {
+          @Html.AntiForgeryToken()
+          <div class="form-horizontal; container" style="margin-left: 650px">
+               <div class="form-group col-md-3 text-register">
+                    @Html.LabelFor(model => model.Username)
+                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
                </div>
 
-          </div>
-     </section>
-     <section>
-          @using (Html.BeginForm())
-          {
-               @Html.AntiForgeryToken()
-               <div class="form-horizontal; container" style="margin-left: 650px">
-                    <div class="form-group col-md-3 text-register">
-                         @Html.LabelFor(model => model.Username)
-                         @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
-                    </div>
-
-                    <div class="form-group col-md-3 text-register">
-                         @Html.LabelFor(model => model.Email)
-                         @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
-                    </div>
-                    @if (System.Web.HttpContext.Current.GetMySessionObject().Level == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
-                    {
+               <div class="form-group col-md-3 text-register">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+               </div>
+               @if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+               {
                     <div class="form-group col-md-3 text-register">
                          @Html.LabelFor(model => model.AccessLevel)
                          @Html.DropDownListFor(model => model.AccessLevel, new SelectList(Enum.GetValues(typeof(EasyBreath.Domain.Enum.URole))), "- Select -", new { @class = "form-control" })
                     </div>
-                    }
-                    <p></p>
-                    <button type="submit" class="btn btn-primary">Save</button>
-               </div>
-          }
-          </section>
+               }
+               <p></p>
+               <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+     }
+</section>

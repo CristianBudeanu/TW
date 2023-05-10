@@ -1,4 +1,4 @@
-﻿@model List<EasyBreath.Domain.Entities.User.UDbModel>
+﻿@model List<EasyBreath.Domain.Entities.User.User>
 @using EasyBreath.web.Extensions
 
 @{
@@ -29,7 +29,7 @@
                          @Html.DisplayNameFor(model => model[0].Email)
                     </th>
                     <th>
-                         @Html.DisplayNameFor(model => model[0].AccessLevel)    
+                         @Html.DisplayNameFor(model => model[0].AccessLevel)
                     </th>
                     <th>
                          @Html.DisplayName("Function")
@@ -48,7 +48,7 @@
                          <td>
                               @Html.DisplayFor(modelItem => item.AccessLevel)
                          </td>
-                         @if (System.Web.HttpContext.Current.GetMySessionObject().Level == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+                         @if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
                          {
                               <td>
 

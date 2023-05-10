@@ -1,5 +1,6 @@
 ﻿using EasyBreath.BussinessLogic.DBModel;
 using EasyBreath.BussinessLogic.Interfaces;
+using EasyBreath.Domain.Entities.Products;
 using EasyBreath.Domain.Entities.User;
 using EasyBreath.Domain.Enum;
 using EasyBreath.web.ActionAtributes;
@@ -13,37 +14,35 @@ namespace EasyBreath.web.Controllers
 
 
      {
-          private readonly ISession _session;
-
+          private readonly IUser _user;
           public UsersController()
           {
                var bl = new BussinessLogic.BusinessLogic();
-               _session = bl.GetSessionBL();
-
+               _user = bl.GetUsertBL();
           }
           [AdminMod]
           public ActionResult Index()
           {
-               var db = new UserContext();
-               var users = db.Users.ToList();
-               return View(users);
+               return View(_user.GetUserList());
           }
-          
-          public ActionResult Edit(int? id)
+
+          [AuthorizedMod]
+          public ActionResult Edit(int id)
           {
-               if(System.Web.HttpContext.Current.GetMySessionObject().Level == URole.ADMINISTRATOR)
+               if(System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == URole.ADMINISTRATOR)
                {
-                    var db = new UserContext();
-                    var user = db.Users.Find(id);
+                    var user = _user.GetUserById(id);
                     if (user == null)
                     {
-                         return HttpNotFound();
+                         return RedirectToAction("Index", "Products");
                     }
-
-                    return View(user);
+                    else
+                    {
+                         return View(_user.GetUserById(id));
+                    }
                }
 
-               else if (System.Web.HttpContext.Current.GetMySessionObject().Level == URole.USER)
+               else if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == URole.USER)
                { 
                     var db = new UserContext();
                     var user = System.Web.HttpContext.Current.GetMySessionObject();
@@ -54,13 +53,7 @@ namespace EasyBreath.web.Controllers
                     }
                     else
                     {
-                         UDbModel model = new UDbModel()
-                         {
-                              Username = user.Username,
-                              Email = user.Email,
-                              AccessLevel = user.Level,
-                         };
-                         return View(model);
+                         return View(_user.GetUserById(id));
                     }
                }
                else
@@ -69,19 +62,20 @@ namespace EasyBreath.web.Controllers
                }
           }
 
+          [AuthorizedMod]
           [HttpPost]
           [ValidateAntiForgeryToken]
-          public ActionResult Edit(UDbModel editUser)
+          public ActionResult Edit(User editUser)
           {
                     var sessionObject = System.Web.HttpContext.Current.GetMySessionObject();
-                    var response = _session.ValidateEditUser(editUser);
+                    var response = _user.ValidateEditUser(editUser);
                     if (response.Status)
                     {
                     if ((sessionObject.Id == editUser.Id))
                          {
                          sessionObject.Username = editUser.Username;
                          sessionObject.Email = editUser.Email;
-                         sessionObject.Level = editUser.AccessLevel;
+                         sessionObject.AccessLevel = editUser.AccessLevel;
                          System.Web.HttpContext.Current.SetMySessionObject(sessionObject);
                          SessionStatus();
                          return RedirectToAction("LoginPage", "Auth");
@@ -99,10 +93,9 @@ namespace EasyBreath.web.Controllers
           }
 
           [AdminMod]
-          public ActionResult Delete(int? id)
+          public ActionResult Delete(int id)
           {
-               var db = new UserContext();
-               var user = db.Users.Find(id);
+               var user = _user.GetUserById(id);
                if (user == null)
                {
                     return HttpNotFound();
@@ -114,9 +107,9 @@ namespace EasyBreath.web.Controllers
           [AdminMod]
           [HttpPost]
           [ValidateAntiForgeryToken]
-          public ActionResult Delete(UDbModel deleteUser)
+          public ActionResult Delete(User deleteUser)
           {
-               var response = _session.ValidateDeleteUser(deleteUser);
+               var response = _user.ValidateDeleteUser(deleteUser);
                if (response.Status)
                {
                     return RedirectToAction("Index", "Home");
@@ -129,7 +122,8 @@ namespace EasyBreath.web.Controllers
           }
 
           [HttpGet]
-          public ActionResult Profile()
+          [AuthorizedMod]
+          public ActionResult UserProfile()
           {
                var user = System.Web.HttpContext.Current.GetMySessionObject();
                if (user == null)
@@ -138,11 +132,11 @@ namespace EasyBreath.web.Controllers
                }
                else
                {
-                    UDbModel DBuser = new UDbModel
+                    User DBuser = new User
                     {
                          Username = user.Username,
                          Email = user.Email,
-                         AccessLevel = user.Level,
+                         AccessLevel = user.AccessLevel,
                     };
                     return View(DBuser);
                }
