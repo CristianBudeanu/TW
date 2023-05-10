@@ -1,0 +1,32 @@
+﻿@model EasyBreath.Domain.Entities.User.User
+@using EasyBreath.web.Extensions
+
+@{
+     Layout = null;
+}
+
+<h2>Edit User</h2>
+
+@using (Html.BeginForm())
+{
+     @Html.AntiForgeryToken()
+
+     <div class="form-group">
+          @Html.LabelFor(model => model.Username)
+          @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+     </div>
+
+     <div class="form-group">
+          @Html.LabelFor(model => model.Email)
+          @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+     </div>
+     if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+     {
+          <div class="form-group">
+               @Html.LabelFor(model => model.AccessLevel)
+               @Html.DropDownListFor(model => model.AccessLevel, new SelectList(Enum.GetValues(typeof(EasyBreath.Domain.Enum.URole))), "- Select -", new { @class = "form-control" })
+          </div>
+     }
+
+     <button type="submit" class="btn btn-primary">Save</button>
+}

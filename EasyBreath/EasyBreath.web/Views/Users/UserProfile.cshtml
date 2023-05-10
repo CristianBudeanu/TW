@@ -1,0 +1,49 @@
+﻿@model EasyBreath.Domain.Entities.User.User
+@using EasyBreath.web.Extensions
+
+@{
+     Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta name="viewport" content="width=device-width" />
+     <title>User Profile</title>
+</head>
+<body>
+     <div>
+          <h4>User Profile</h4>
+          <hr />
+          <dl class="dl-horizontal">
+               <dt>
+                    @Html.DisplayNameFor(model => model.Username)
+               </dt>
+
+               <dd>
+                    @Html.DisplayFor(model => model.Username)
+               </dd>
+               <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+               </dt>
+
+               <dd>
+                    @Html.DisplayFor(model => model.Email)
+               </dd>
+               <dt>
+                    @Html.DisplayNameFor(model => model.AccessLevel)
+               </dt>
+
+               <dd>
+                    @Html.DisplayFor(model => model.AccessLevel)
+               </dd>
+
+          </dl>
+     </div>
+     <p>
+          @Html.ActionLink("Edit", "Edit", new { id = System.Web.HttpContext.Current.GetMySessionObject().Id}) |
+          @Html.ActionLink("Back to List", "Index")
+     </p>
+</body>
+</html>
