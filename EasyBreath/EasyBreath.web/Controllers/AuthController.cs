@@ -1,20 +1,16 @@
 ﻿using EasyBreath.BussinessLogic.Interfaces;
-using EasyBreath.Domain.Entities.Response;
 using EasyBreath.Domain.Entities.User;
+using EasyBreath.web.ActionAtributes;
+using EasyBreath.web.Extensions;
 using EasyBreath.web.Models;
-using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.SessionState;
-
+using static EasyBreath.BussinessLogic.Core.SessionApi;
 
 namespace EasyBreath.web.Controllers
 {
-     public class AuthController : Controller
+     public class AuthController : BaseController
      {
           private readonly ISession _session;
 
@@ -36,17 +32,17 @@ namespace EasyBreath.web.Controllers
           {
                if (ModelState.IsValid)
                {
-                    URegisterData uRegister = new URegisterData
+                    RegisterData uRegister = new RegisterData
                     {
                          Username = data.Username,
                          Password = data.Password,
-                         Email = data.Email, 
+                         Email = data.Email,
                     };
 
                     var response = _session.ValidateUserRegister(uRegister);
                     if (response.Status)
                     {
-                         return RedirectToAction("Index", "Home");
+                         return RedirectToAction("LoginPage", "Auth");
                     }
                     else
                     {
@@ -68,26 +64,29 @@ namespace EasyBreath.web.Controllers
           {
                if (ModelState.IsValid)
                {
-                    ULoginData uLogin = new ULoginData
+                    LoginData uLogin = new LoginData
                     {
                          Username = data.Username,
                          Password = data.Password,
-                         LoginDateTime = DateTime.Now,
+                         Time = DateTime.Now,
                     };
 
                     var response = _session.ValidateUserCredential(uLogin);
+                    SessionStatus();
                     if (response.Status)
                     {
                          var cookieResponse = _session.GenCookie(data.Username);
                          if (cookieResponse != null)
                          {
                               ControllerContext.HttpContext.Response.Cookies.Add(cookieResponse.Cookie);
+
                               return RedirectToAction("Index", "Home");
                          }
                          else
                          {
                               throw new Exception();
                          }
+
                     }
                     else
                     {
@@ -99,10 +98,23 @@ namespace EasyBreath.web.Controllers
                return View();
           }
 
-          [HttpGet]
-          public ActionResult Login()
+          [AuthorizedMod]
+          public ActionResult Logout()
           {
-               return View(new LoginForm());
+               System.Web.HttpContext.Current.Session.Clear();
+               if (ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains("X-KEY"))
+               {
+                    var cookie = ControllerContext.HttpContext.Request.Cookies["X-KEY"];
+                    if (cookie != null)
+                    {
+                         cookie.Expires = DateTime.Now.AddDays(-1);
+                         ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    }
+               }
+
+               System.Web.HttpContext.Current.Session["LoginStatus"] = "logout";
+
+               return RedirectToAction("Index", "Home");
           }
 
      }

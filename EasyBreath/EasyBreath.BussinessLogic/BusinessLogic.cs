@@ -1,9 +1,4 @@
 ﻿using EasyBreath.BussinessLogic.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyBreath.BussinessLogic
 {
@@ -12,6 +7,14 @@ namespace EasyBreath.BussinessLogic
           public ISession GetSessionBL()
           {
                return new SessionBL();
+          }
+          public IProduct GetProductBL()
+          {
+               return new ProductBL();
+          }
+          public IUser GetUsertBL()
+          {
+               return new UserBL();
           }
      }
 }
