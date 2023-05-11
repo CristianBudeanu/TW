@@ -26,14 +26,7 @@ namespace EasyBreath.BussinessLogic.Core
                List<Product> products = null;
                using (var db = new ProductsContext())
                {
-                    if (db == null)
-                    {
-                         products = null;
-                    }
-                    else
-                    {
                          products = db.Products.OrderByDescending(p => p.Name).ToList();
-                    }
                          
                }
 

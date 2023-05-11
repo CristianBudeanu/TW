@@ -31,8 +31,8 @@ namespace EasyBreath.web.ActionAtributes
                     {
                          filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
                          {
-                              controller = "Error",
-                              action = "Error404"
+                              controller = "Home",
+                              action = "Index"
                          }));
                     }
                }
@@ -41,8 +41,8 @@ namespace EasyBreath.web.ActionAtributes
 
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
                     {
-                         controller = "Error",
-                         action = "Error404"
+                         controller = "Home",
+                         action = "Index"
                     }));
                }
           }

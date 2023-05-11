@@ -6,7 +6,7 @@ namespace EasyBreath.BussinessLogic.DBModel
 {
      public class ProductsContext : DbContext
      {
-          public ProductsContext() : base("name=EasyBreath")
+          public ProductsContext() : base("name=EasyBreathDB")
           {
 
           }

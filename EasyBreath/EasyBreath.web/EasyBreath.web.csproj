@@ -424,6 +424,10 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Profile.cshtml" />
+    <Content Include="Views\Products\CreatePage.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -434,7 +438,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Products\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EasyBreath.BussinessLogic\EasyBreath.BussinessLogic.csproj">
