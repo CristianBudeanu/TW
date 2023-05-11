@@ -1,11 +1,15 @@
-using EasyBreath.Domain.Enum;
+﻿using EasyBreath.Domain.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
 
 namespace EasyBreath.Domain.Entities.Products
 {
+<<<<<<<< HEAD:EasyBreath/EasyBreath.Domain/Entities/Products/Vitamin.cs
+     public class Vitamin
+========
      public class Product
+>>>>>>>> main:EasyBreath/EasyBreath.Domain/Entities/Products/Product.cs
      {
           [Key]
           [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -1,4 +1,4 @@
-﻿using EasyBreath.BussinessLogic.DBModel;
+using EasyBreath.BussinessLogic.DBModel;
 using EasyBreath.BussinessLogic.Interfaces;
 using EasyBreath.Domain.Entities.Products;
 using EasyBreath.Domain.Entities.Response;
@@ -13,7 +13,6 @@ namespace EasyBreath.BussinessLogic.Core
 {
      public class ProductApi
      {
-
           public struct ProductData
           {
                public string Name { get; set; }
@@ -27,7 +26,8 @@ namespace EasyBreath.BussinessLogic.Core
                List<Product> products = null;
                using (var db = new ProductsContext())
                {
-                    products = db.Products.OrderByDescending(p => p.Name).ToList();
+                         products = db.Products.OrderByDescending(p => p.Name).ToList();
+                         
                }
 
                return products;

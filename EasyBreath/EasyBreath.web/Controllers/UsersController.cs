@@ -15,12 +15,10 @@ namespace EasyBreath.web.Controllers
 
      {
           private readonly IUser _user;
-
           public UsersController()
           {
                var bl = new BussinessLogic.BusinessLogic();
                _user = bl.GetUsertBL();
-
           }
           [AdminMod]
           public ActionResult Index()
@@ -31,7 +29,7 @@ namespace EasyBreath.web.Controllers
           [AuthorizedMod]
           public ActionResult Edit(int id)
           {
-               if(System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == URole.ADMINISTRATOR)
+               if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == URole.ADMINISTRATOR )
                {
                     var user = _user.GetUserById(id);
                     if (user == null)
@@ -45,10 +43,10 @@ namespace EasyBreath.web.Controllers
                }
 
                else if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == URole.USER)
-               { 
+               {
                     var db = new UserContext();
                     var user = System.Web.HttpContext.Current.GetMySessionObject();
-                    
+
                     if (user.Id != id)
                     {
                          return HttpNotFound();
@@ -125,7 +123,7 @@ namespace EasyBreath.web.Controllers
 
           [HttpGet]
           [AuthorizedMod]
-          public ActionResult UserProfile()
+          public ActionResult Profile()
           {
                var user = System.Web.HttpContext.Current.GetMySessionObject();
                if (user == null)

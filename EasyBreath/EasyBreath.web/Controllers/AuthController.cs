@@ -75,11 +75,11 @@ namespace EasyBreath.web.Controllers
                     SessionStatus();
                     if (response.Status)
                     {
+                         
                          var cookieResponse = _session.GenCookie(data.Username);
                          if (cookieResponse != null)
                          {
                               ControllerContext.HttpContext.Response.Cookies.Add(cookieResponse.Cookie);
-
                               return RedirectToAction("Index", "Home");
                          }
                          else
@@ -90,8 +90,9 @@ namespace EasyBreath.web.Controllers
                     }
                     else
                     {
-                         ViewBag.Error = "Invalid username or password.";
-                         ModelState.AddModelError("Invalid username or password.", response.StatusMessage);
+                         ViewBag.Error = "Invalid Username or password.";
+                         ModelState.AddModelError("Invalid Username or password.", response.StatusMessage);
+                         ViewData["LoginFlag"] = "Invalid Username or Password!";
                          return View();
                     }
                }

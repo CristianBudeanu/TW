@@ -2,69 +2,70 @@
 @using EasyBreath.web.Extensions
 
 @{
-     Layout = null;
+     Layout = "~/Views/Shared/_Layout.cshtml";
      var user = System.Web.HttpContext.Current.GetMySessionObject();
 }
 
-
-<table border="1" cellspacing="0">
-     <tr>
-          <th>
-               @Html.DisplayNameFor(model => model.Thumbnail)
-          </th>
-          <th>
-               @Html.DisplayNameFor(model => model.Name)
-          </th>
-          <th>
-               @Html.DisplayNameFor(model => model.Price)
-          </th>
-          <th>
-               @Html.DisplayNameFor(model => model.Amount)
-          </th>
-
-     </tr>
-
-     @foreach (var item in Model)
-     {
+<section class="container" style="margin-top: 60px; text-align: center">
+     <table border="1" cellspacing="0">
           <tr>
-               <td>
-                    <img src="@item.Thumbnail" alt="Product Thumbnail" width="100" height="100">
-               </td>
-               <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-               </td>
-               <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-               </td>
-               <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-               </td>
-               <td>
-                    @Html.DisplayFor(modelItem => item.Amount)
-               </td>
-               @if ((user != null) && (user.AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR))
-               {
-                    <td>
-                         @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                         @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-
-                    </td>
-               }
-               <td>
-                    @Html.ActionLink("AddToCart", "AddToCart", "Cart", new { id = item.Id }, null) |
-
-               </td>
+               <th>
+                    @Html.DisplayNameFor(model => model.Thumbnail)
+               </th>
+               <th>
+                    @Html.DisplayNameFor(model => model.Name)
+               </th>
+               <th>
+                    @Html.DisplayNameFor(model => model.Price)
+               </th>
+               <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+               </th>
 
           </tr>
-     }
-     @if ((user != null) && (user.AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR))
-     {
-          <td>
 
-               @Html.ActionLink("Add Product", "CreatePage")
+          @foreach (var item in Model)
+          {
+               <tr>
+                    <td>
+                         <img src="@item.Thumbnail" alt="Product Thumbnail" width="100" height="100">
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                         @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    @if ((user != null) && (user.AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR))
+                    {
+                         <td>
+                              @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                              @Html.ActionLink("Delete", "Delete", new { id = item.Id })
 
-          </td>
-     }
+                         </td>
+                    }
+                    <td>
+                         @Html.ActionLink("AddToCart", "AddToCart", "Cart", new { id = item.Id }, null) |
 
-</table>
+                    </td>
 
+               </tr>
+          }
+          @if ((user != null) && (user.AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR))
+          {
+               <td>
+
+                    @Html.ActionLink("Add Product", "CreatePage")
+
+               </td>
+          }
+
+     </table>
+
+</section>

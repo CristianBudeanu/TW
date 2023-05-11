@@ -131,6 +131,7 @@
     <Content Include="assets\img\Creatori\Ruxandra.png" />
     <Content Include="assets\img\cta-bg.jpg" />
     <Content Include="assets\img\event\event_page.jpeg" />
+    <Content Include="assets\img\event\Screenshot_1.png" />
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\features.jpg" />
     <Content Include="assets\img\hero-bg.jpg" />
@@ -399,7 +400,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -416,10 +416,18 @@
     <Content Include="Views\Home\Event.cshtml" />
     <Content Include="Views\Home\Nutrition.cshtml" />
     <Content Include="Views\Home\Vitamins.cshtml" />
-    <Content Include="Views\Home\LoginPage.cshtml" />
     <Content Include="Views\Auth\LoginPage.cshtml" />
     <Content Include="Views\Auth\RegisterPage.cshtml" />
-    <Content Include="Views\_LayoutPage2.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Profile.cshtml" />
+    <Content Include="Views\Products\CreatePage.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

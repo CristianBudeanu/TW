@@ -12,6 +12,5 @@ namespace EasyBreath.BussinessLogic.Interfaces
           ServiceResponse ValidateUserRegister(RegisterData newUuser);
           CookieResponse GenCookie(string username);
           User GetUserByCookie(string value);
-
      }
 }

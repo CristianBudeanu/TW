@@ -1,4 +1,4 @@
-﻿using EasyBreath.BussinessLogic.DBModel;
+using EasyBreath.BussinessLogic.DBModel;
 using EasyBreath.Domain.Entities.Products;
 using EasyBreath.Domain.Entities.Response;
 using EasyBreath.Domain.Entities.User;
@@ -23,7 +23,6 @@ namespace EasyBreath.BussinessLogic.Core
 
                return users;
           }
-
           public User UserById(int id)
           {
                using (var db = new UserContext())

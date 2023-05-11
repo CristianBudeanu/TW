@@ -9,6 +9,7 @@
 	--clr-bg: rgba(1, 1, 1, 1);
 	--clr-white: rgba(255, 255, 255, 1);
 	--clr-black: black;
+	--clr-login: black;
 }
 
 *,
@@ -27,69 +28,10 @@
 .dark-theme {
 	--clr-white: black;
 	--clr-black: rgba(255, 255, 255, 1);
+	--clr-login: #eee;
 
 }
 
-.button {
-	font-size: 1em;
-	display: inline-block;
-	cursor: pointer;
-	text-decoration: none;
-	color: var(--clr-neon);
-	border: var(--clr-neon) 4px solid;
-	padding: 0.25em 1em;
-	border-radius: 0.25em;
-	text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
-	box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-	position: relative;
-}
-
-	.button::before {
-		pointer-events: none;
-		content: "";
-		position: absolute;
-		background: var(--clr-neon);
-		top: 120%;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transform: perspective(1.2em) rotateX(10deg) scale(1.5, 0.5);
-		filter: blur(1.15em);
-		opacity: 0.0;
-		transition: transform 0.5s linear;
-	}
-
-	.button::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
-		opacity: 0;
-		background: var(--clr-neon);
-		z-index: -1;
-		transition: opacity 0.5s linear;
-	}
-
-	.button:hover,
-	.button:focus {
-		color: var(--clr-bg);
-		text-shadow: none;
-	}
-
-		.button:hover::before,
-		.button:focus::before {
-			opacity: 1;
-			transform: perspective(1em) rotateX(40deg) scale(1.5, 0.6);
-			transition: transform 0.5s linear;
-		}
-
-		.button:hover::after,
-		.button:focus::after {
-			opacity: 1;
-		}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -119,10 +61,11 @@ h6 {
 
 
 /*--------------------------------------------------------------
-# Login
+# Auth
 --------------------------------------------------------------*/
-/* Import Google font - Poppins */
-
+.text-register {
+	color: var(--clr-login);
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -925,7 +868,7 @@ section {
 	border: 1px solid #ebebeb;
 	padding: 80px 20px;
 	transition: all ease-in-out 0.3s;
-	background: #fff;
+	/*background: #fff;*/
 }
 
 	.services .icon-box .icon {
@@ -954,7 +897,7 @@ section {
 	}
 
 		.services .icon-box h4 a {
-			color: #151515;
+			/*color: #151515;*/
 			transition: ease-in-out 0.3s;
 		}
 
@@ -1235,7 +1178,7 @@ section {
 			line-height: 30px;
 			display: block;
 			font-weight: 700;
-			color: #151515;
+			/*color: #151515;*/
 			margin-left: 50px;
 		}
 
@@ -1396,7 +1339,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-	background: #fff;
+	background-color: var(--clr-white);
 	padding: 60px 0;
 }
 
@@ -1483,7 +1426,7 @@ section {
 --------------------------------------------------------------*/
 .contact .info {
 	width: 100%;
-	background: #fff;
+	/*background: #fff;*/
 }
 
 	.contact .info i {
@@ -1505,14 +1448,14 @@ section {
 		font-size: 22px;
 		font-weight: 600;
 		margin-bottom: 5px;
-		color: #151515;
+		color: var(--clr-login);
 	}
 
 	.contact .info p {
 		padding: 0 0 0 60px;
 		margin-bottom: 0;
 		font-size: 14px;
-		color: #484848;
+		color: var(--clr-login);
 	}
 
 	.contact .info .email,
@@ -1630,7 +1573,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
 	padding: 15px 0;
-	background: whitesmoke;
+	/*background: whitesmoke;*/
 	min-height: 40px;
 	margin-top: 74px;
 }
@@ -1663,6 +1606,7 @@ section {
 	.breadcrumbs {
 		margin-top: 68px;
 	}
+
 
 		.breadcrumbs .d-flex {
 			display: block !important;
@@ -1906,3 +1850,17 @@ img {
 		.product button:hover {
 			background-color: #3e8e41;
 		}
+
+/*-New Style*/
+
+.page-title {
+	font-family: cursive;
+	color: #026773;
+}
+
+.iframe {
+	border: 1px solid #ccc;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+	max-width: 100%;
+}
+
