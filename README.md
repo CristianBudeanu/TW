@@ -30,8 +30,10 @@ The EasyBreath platform has a list of available functionalities among which it c
 ![image](https://github.com/CristianBudeanu/TW/assets/52885053/cc6f36f1-1a0d-4676-8cfd-f84eb18a7397)
 
 *User can buy our products*
+![image](https://github.com/CristianBudeanu/TW/assets/52885053/834729db-28d1-4e11-8962-e80f7eaa68d6)
 
 *User can add some products*
+![image](https://github.com/CristianBudeanu/TW/assets/52885053/d305a0aa-4dea-49c2-968d-6b085a396aa3)
 
 *General information about nutrition.*
 ![image](https://github.com/CristianBudeanu/TW/assets/52885053/df57e495-b638-4fb9-a6c4-8a9595fe8ba4)
