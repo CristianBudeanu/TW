@@ -5,6 +5,7 @@ using EasyBreath.Domain.Entities.Response;
 using EasyBreath.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,7 @@ namespace EasyBreath.BussinessLogic.Core
                     return currentProduct;
                }
           }
+
 
           public ServiceResponse ReturnEditProductStatus(Product data)
           {
@@ -153,7 +155,20 @@ namespace EasyBreath.BussinessLogic.Core
                               return response;
                          }
 
-                         db.Products.Remove(existingProduct);
+                         using (var dbC = new CartsContext())
+                         {
+                              var items = dbC.Carts
+                             .Where(item => item.ProductId == deleteProduct.Id)
+                             .ToList();
+
+                              foreach (var item in items)
+                              {
+                                        var itemCart = dbC.Carts.FirstOrDefault(p => p.ProductId == item.ProductId);
+                                   dbC.Carts.Remove(itemCart);
+                                        
+                              }
+                         }
+                              db.Products.Remove(existingProduct);
 
                          response.StatusMessage = "Product deleted successfully";
                          response.Status = true;

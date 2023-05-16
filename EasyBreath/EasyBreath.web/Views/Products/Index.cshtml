@@ -50,11 +50,17 @@
 
                          </td>
                     }
-                    <td>
-                         @Html.ActionLink("AddToCart", "AddToCart", "Cart", new { id = item.Id }, null) |
+                    @*<td>
+               @Html.ActionLink("AddToCart","AddToCart", "Cart", new { productId = item.Id, userId = user.Id }, null) |
 
-                    </td>
-
+          </td>*@
+               <td>
+                    @using (Html.BeginForm("AddToCart", "Cart", new { productId = item.Id, userId = user.Id }, FormMethod.Post))
+                    {
+                         @Html.AntiForgeryToken()
+                         <button type="submit" class="btn-link">Add to Cart</button>
+                    }
+               </td>
                </tr>
           }
           @if ((user != null) && (user.AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR))
@@ -69,3 +75,29 @@
      </table>
 
 </section>
+
+@*<script>
+    $(document).ready(function () {
+        $("#addToCartButton").click(function (e) {
+            e.preventDefault(); // Prevent the default link behavior
+
+            var productId = $(this).attr("data-productId");
+            var userId = $(this).attr("data-userId");
+
+            // Send an AJAX request to the AddToCart action
+            $.ajax({
+                url: "/Cart/AddToCart",
+                type: "POST",
+                data: { productId: productId, userId: userId },
+                success: function (response) {
+                    // Handle the success response, if needed
+                    console.log("Product added to cart successfully.");
+                },
+                error: function (xhr, status, error) {
+                    // Handle the error response, if needed
+                    console.log("Error adding the product to cart: " + error);
+                }
+            });
+        });
+    });
+</script>*@

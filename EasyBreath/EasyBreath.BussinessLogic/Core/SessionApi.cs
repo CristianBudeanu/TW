@@ -14,7 +14,7 @@ using static EasyBreath.BussinessLogic.Core.SessionApi;
 
 namespace EasyBreath.BussinessLogic.Core
 {
-     public class SessionApi //: ProductApi
+     public class SessionApi 
      {
           public struct LoginData
           {
