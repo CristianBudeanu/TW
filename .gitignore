@@ -25,6 +25,7 @@ EasyBreath\EasyBreath.Helpers/EasyBreath.Helpers.csproj
 /EasyBreath/EasyBreath.Helpers/bin
 /EasyBreath/EasyBreath.Helpers/obj
 /EasyBreath/EasyBreath.BussinessLogic/EasyBreath.BussinessLogic.csproj
+*.dll
 
 =======
 /EasyBreath/EasyBreath.BussinessLogic/EasyBreath.BussinessLogic.csproj
