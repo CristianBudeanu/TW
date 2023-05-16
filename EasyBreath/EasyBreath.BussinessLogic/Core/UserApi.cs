@@ -121,7 +121,14 @@ namespace EasyBreath.BussinessLogic.Core
 
                               }
                          }
-                         db.Users.Remove(existingUser);
+
+                         using (var dbS = new SessionContext())
+                         {
+                              var userSession = dbS.Sessions.FirstOrDefault(s => s.Username == existingUser.Username);
+                              dbS.Sessions.Remove(userSession);
+                              dbS.SaveChanges();
+                         }
+                              db.Users.Remove(existingUser);
                          db.SaveChanges();
 
                          response.StatusMessage = "User deleted successfully";

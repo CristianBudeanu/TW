@@ -21,21 +21,6 @@
 
      </div>
 </section>
-
-                         </td>
-                    }
-                    @*<td>
-               @Html.ActionLink("AddToCart","AddToCart", "Cart", new { productId = item.Id, userId = user.Id }, null) |
-
-          </td>*@
-               <td>
-                    @using (Html.BeginForm("AddToCart", "Cart", new { productId = item.Id, userId = user.Id }, FormMethod.Post))
-                    {
-                         @Html.AntiForgeryToken()
-                         <button type="submit" class="btn-link">Add to Cart</button>
-                    }
-               </td>
-               </tr>
           }
 <section>
      <div class="container text-register" data-aos="fade-up" style="margin-top: -50px">
@@ -69,7 +54,13 @@
                                         @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
                                         {
                                         <p>
-                                             @Html.ActionLink("AddToCart", "AddToCart", "Cart", new { id = item.Id }, null)
+                                             <td>
+                                                  @using (Html.BeginForm("AddToCart", "Cart", new { productId = item.Id, userId = user.Id }, FormMethod.Post))
+                                                  {
+                                                       @Html.AntiForgeryToken()
+                                                       <button type="submit" class="btn-link">Add to Cart</button>
+                                                  }
+                                             </td>
 
                                         </p>
                                         }
