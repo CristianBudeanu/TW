@@ -1,5 +1,6 @@
 ﻿//using EasyBreath.Domain.Entities.Products;
 using EasyBreath.Domain.Entities.Products;
+using EasyBreath.Domain.Entities.ShoppingCart;
 using System.Data.Entity;
 
 namespace EasyBreath.BussinessLogic.DBModel

@@ -2,6 +2,9 @@ using EasyBreath.Domain.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
+using System.Collections.Generic;
+using EasyBreath.Domain.Entities.ShoppingCart;
+using System.ComponentModel;
 
 namespace EasyBreath.Domain.Entities.Products
 {

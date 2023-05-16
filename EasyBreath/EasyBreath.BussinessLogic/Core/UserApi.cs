@@ -101,8 +101,34 @@ namespace EasyBreath.BussinessLogic.Core
                               response.Status = false;
                               return response;
                          }
+                         using (var dbC = new CartsContext())
+                         {
+                              var items = dbC.Carts
+                             .Where(item => item.CartId == deleteUser.Id)
+                             .ToList();
 
-                         db.Users.Remove(existingUser);
+                              foreach (var item in items)
+                              {
+                                   var userCartItem = dbC.Carts.FirstOrDefault(p => p.CartId == item.CartId);
+                                   using (var dbP = new ProductsContext())
+                                   {
+                                        var product = dbP.Products.FirstOrDefault(p => p.Id == userCartItem.ProductId);
+                                        product.Amount += userCartItem.Quantity;
+                                        dbP.SaveChanges();
+                                   }
+                                        dbC.Carts.Remove(userCartItem);
+                                   dbC.SaveChanges();
+
+                              }
+                         }
+
+                         using (var dbS = new SessionContext())
+                         {
+                              var userSession = dbS.Sessions.FirstOrDefault(s => s.Username == existingUser.Username);
+                              dbS.Sessions.Remove(userSession);
+                              dbS.SaveChanges();
+                         }
+                              db.Users.Remove(existingUser);
                          db.SaveChanges();
 
                          response.StatusMessage = "User deleted successfully";

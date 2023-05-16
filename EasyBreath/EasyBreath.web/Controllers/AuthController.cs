@@ -72,7 +72,7 @@ namespace EasyBreath.web.Controllers
                     };
 
                     var response = _session.ValidateUserCredential(uLogin);
-                    SessionStatus();
+                    //SessionStatus();
                     if (response.Status)
                     {
                          
