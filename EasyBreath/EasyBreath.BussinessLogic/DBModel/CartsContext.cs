@@ -11,12 +11,12 @@ namespace EasyBreath.BussinessLogic.DBModel
 {
      public class CartsContext : DbContext
      {
-               public CartsContext() : base("name=EasyBreathDB")
-               {
+          public CartsContext() : base("name=EasyBreathDB") 
+          {
+               Database.SetInitializer(new CartsDbInitializer());
+          }
 
-               }
-
-               public DbSet<ShoppingItemCart> Carts { get; set; }
+          public virtual DbSet<ShoppingItemCart> Carts { get; set; }
 
           
      }

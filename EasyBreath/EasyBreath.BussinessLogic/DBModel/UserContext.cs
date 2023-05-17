@@ -7,7 +7,7 @@ namespace EasyBreath.BussinessLogic.DBModel
      {
           public UserContext() : base("name=EasyBreathDB")
           {
-
+               //Database.SetInitializer<UserContext>(new CreateDatabaseIfNotExists<UserContext>());
           }
           public DbSet<User> Users { get; set; }
      }

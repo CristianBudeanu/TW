@@ -58,6 +58,7 @@
     <Compile Include="Core\ProductApi.cs" />
     <Compile Include="Core\SessionApi.cs" />
     <Compile Include="Core\UserApi.cs" />
+    <Compile Include="DBModel\CartDbInitializing.cs" />
     <Compile Include="DBModel\CartsContext.cs" />
     <Compile Include="DBModel\ProductDbInitializer.cs" />
     <Compile Include="DBModel\ProductsContext.cs" />

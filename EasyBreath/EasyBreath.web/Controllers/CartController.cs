@@ -13,7 +13,7 @@ using static EasyBreath.BussinessLogic.Core.ProductApi;
 
 namespace EasyBreath.web.Controllers
 {
-    public class CartController : Controller
+    public class CartController : BaseController
     {
 
           private readonly ICart _cart;
