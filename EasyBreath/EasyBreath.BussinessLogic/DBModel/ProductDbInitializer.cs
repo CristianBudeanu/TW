@@ -56,6 +56,27 @@ namespace EasyBreath.BussinessLogic.DBModel
                                       Price = 50,
                                       Amount = 5,
                                       Thumbnail = "https://m.media-amazon.com/images/I/71JO8SJ5mBL.jpg"
+                              },
+                              new Product()
+                              {
+                                   Name = "Vitamin E",
+                                      Price = 35,
+                                      Amount = 5,
+                                      Thumbnail = "https://www.natr.md/wp-content/uploads/2022/05/1650-new.jpg"
+                              },
+                              new Product()
+                              {
+                                   Name = "Vitamin Omega-3",
+                                      Price = 35,
+                                      Amount = 5,
+                                      Thumbnail = "https://biotus.md/media/catalog/product/cache/fa65709cb924250dcd7e95212b5f977b/s/o/solgar_omega-3_epa_dha_-100-25.jpg"
+                              },
+                              new Product()
+                              {
+                                   Name = "Calciu",
+                                      Price = 35,
+                                      Amount = 5,
+                                      Thumbnail = "https://yarba.md/wp-content/uploads/2021/06/4e6b660769d711ea9da5480fcf36b953_ec71a3e169d811ea9da5480fcf36b953.jpg"
                               }
 
                          };

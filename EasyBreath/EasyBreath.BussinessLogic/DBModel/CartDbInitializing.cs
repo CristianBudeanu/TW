@@ -12,7 +12,7 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
                using (CartContext db = new CartContext())
                {
-                    if (db.Database.Exists())
+                    if (db.Database.CreateIfNotExists())
                     {
                          if (!db.Carts.Any())
                          {
