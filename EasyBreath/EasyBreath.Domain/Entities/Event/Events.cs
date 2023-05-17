@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace EasyBreath.Domain.Entities.Event
 {
@@ -16,7 +17,7 @@ namespace EasyBreath.Domain.Entities.Event
           [Required]
           public string Name { get; set; }
           [Required]
-          public DataType Date { get; set; }
+          public DateTime DateEvent { get; set; }
           [Required]
           public string Description { get; set; }
           [Required]

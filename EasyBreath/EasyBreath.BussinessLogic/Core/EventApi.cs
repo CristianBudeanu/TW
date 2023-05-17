@@ -17,7 +17,6 @@ namespace EasyBreath.BussinessLogic.Core
                using (var db = new EventsContext())
                {
                     events = db.Events.OrderByDescending(p => p.Name).ToList();
-
                }
                return events;
           }
@@ -62,7 +61,7 @@ namespace EasyBreath.BussinessLogic.Core
                          else
                          {
                               existingEvent.Name = data.Name;
-                              existingEvent.Date = data.Date;
+                              existingEvent.DateEvent = data.DateEvent;
                               existingEvent.Description = data.Description;
                               existingEvent.Location = data.Location;
                               existingEvent.Thumbnail = data.Thumbnail;

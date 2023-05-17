@@ -432,10 +432,10 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Carts\AddToCart.cshtml" />
     <Content Include="Views\Carts\Index.cshtml" />
-    <Content Include="Views\Event\CreatePage.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\Delete.cshtml" />
+    <Content Include="Views\Event\CreatePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
