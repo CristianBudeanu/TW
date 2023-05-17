@@ -1,4 +1,5 @@
-﻿using EasyBreath.web.App_Start;
+﻿using EasyBreath.BussinessLogic.DBModel;
+using EasyBreath.web.App_Start;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +12,10 @@ namespace EasyBreath.web
      {
           void Application_Start(object sender, EventArgs e)
           {
+               CartDbInitializer.Seed();
+               UserDbInitializer.Seed();
+               ProductDbInitializer.Seed();
+               
                // Code that runs on application startup
                AreaRegistration.RegisterAllAreas();
                RouteConfig.RegisterRoutes(RouteTable.Routes);

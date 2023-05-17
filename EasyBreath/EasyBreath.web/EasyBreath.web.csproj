@@ -324,6 +324,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ActionAtributes\MyActionFilter.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -428,6 +429,8 @@
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Carts\AddToCart.cshtml" />
+    <Content Include="Views\Carts\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
