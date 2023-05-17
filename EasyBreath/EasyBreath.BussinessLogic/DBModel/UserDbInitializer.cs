@@ -17,18 +17,19 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
                using (UserContext db = new UserContext())
                {
-                    if (db.Database.CreateIfNotExists())
+                    if (db.Database.Exists())
                     {
                          if (!db.Users.Any())
                          {
-                              var users = new List<User>
+
+                                   var users = new List<User>
                               {
                                  new User()
                                  {
                                       Username = "Cristian",
                                       Password = LoginHelper.HashGen("cristian123"),
                                       Email = "cristian.budeanu@isa.utm.md",
-                                      RegisterDateTime = DateTime.Now,
+                                      RegisterDateTime = DateTime.UtcNow,
                                       AccessLevel = URole.ADMINISTRATOR
                                  },
 
@@ -39,7 +40,7 @@ namespace EasyBreath.BussinessLogic.DBModel
                                    Password = LoginHelper.HashGen("ruxanda123"),
                                    Email = "ruxanda559@gmail.com",
                                    LoginDateTime = DateTime.Now,
-                                   RegisterDateTime = DateTime.Now,
+                                   RegisterDateTime = DateTime.UtcNow,
                                    AccessLevel = URole.ADMINISTRATOR
                               },
 
@@ -49,7 +50,7 @@ namespace EasyBreath.BussinessLogic.DBModel
                                    Username = "Pepenel",
                                    Password = LoginHelper.HashGen("pepenel123"),
                                    Email = "pepenel@gmail.com",
-                                   RegisterDateTime = DateTime.Now,
+                                   RegisterDateTime = DateTime.UtcNow,
                                    AccessLevel = URole.ADMINISTRATOR
                               },
 
@@ -58,7 +59,7 @@ namespace EasyBreath.BussinessLogic.DBModel
                                    Username = "Alexandra",
                                    Password = LoginHelper.HashGen("alexandra123"),
                                    Email = "alexandra@gmail.com",
-                                   RegisterDateTime = DateTime.Now,
+                                   RegisterDateTime = DateTime.UtcNow,
                                    AccessLevel = URole.ADMINISTRATOR
                               },
 
@@ -68,12 +69,12 @@ namespace EasyBreath.BussinessLogic.DBModel
                                    Username = "test",
                                    Password = LoginHelper.HashGen("test123456"),
                                    Email = "test@gmail.com",
-                                   RegisterDateTime = DateTime.Now,
+                                   RegisterDateTime = DateTime.UtcNow,
                                    AccessLevel = URole.USER
                               }
                          };
-                              users.ForEach(p => db.Users.Add(p));
-                              db.SaveChanges();
+                                   users.ForEach(p => db.Users.Add(p));
+                                   db.SaveChanges();               
                          }
                     }
 

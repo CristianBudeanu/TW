@@ -21,33 +21,35 @@ namespace EasyBreath.BussinessLogic.Core
           {
                using (var db = new CartsContext())
                {
-                    var existingCart = db.Carts.FirstOrDefault(u => u.CartId == user.Id);
-                    if (existingCart == null)
-                    {
-                         return new List<ShoppingItemCart>();
-                    }
-                    else
-                    {
-                         var items = db.Carts
-                             .Where(item => item.CartId == existingCart.CartId)
-                             .OrderBy(item => item.ProductId)
-                             .ToList();
 
-                         foreach (var item in items)
+                         var existingCart = db.Carts.FirstOrDefault(u => u.CartId == user.Id);
+                         if (existingCart == null)
                          {
-                              using (var db1 = new ProductsContext())
-                              {
-                                   var product = db1.Products.FirstOrDefault(p => p.Id == item.ProductId);
-                                   item.Product = product;
-                              }
+                              return new List<ShoppingItemCart>();
                          }
-
-                         return items.Select(item => new ShoppingItemCart
+                         else
                          {
-                              Product = item.Product,
-                              Quantity = item.Quantity
-                         }).ToList();
-                    }
+                              var items = db.Carts
+                                  .Where(item => item.CartId == existingCart.CartId)
+                                  .OrderBy(item => item.ProductId)
+                                  .ToList();
+
+                              foreach (var item in items)
+                              {
+                                   using (var db1 = new ProductsContext())
+                                   {
+                                        var product = db1.Products.FirstOrDefault(p => p.Id == item.ProductId);
+                                        item.Product = product;
+                                   }
+                              }
+
+                              return items.Select(item => new ShoppingItemCart
+                              {
+                                   Product = item.Product,
+                                   Quantity = item.Quantity
+                              }).ToList();
+                         }
+                    
                }
           }
 

@@ -22,10 +22,10 @@ namespace EasyBreath.Domain.Entities.User
           [Required]
           public string Email { get; set; }
 
-          [DataType(DataType.Date)]
+          [Column(TypeName = "datetime2")]
           public DateTime LoginDateTime { get; set; }
 
-          [DataType(DataType.Date)]
+          [Column(TypeName = "datetime2")]
           public DateTime RegisterDateTime { get; set; }
 
           [Required]

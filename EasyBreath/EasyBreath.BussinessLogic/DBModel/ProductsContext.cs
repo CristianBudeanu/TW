@@ -9,7 +9,7 @@ namespace EasyBreath.BussinessLogic.DBModel
      {
           public ProductsContext() : base("name=EasyBreathDB")
           {
-
+               
           }
           public virtual DbSet<Product> Products { get; set; }
      }

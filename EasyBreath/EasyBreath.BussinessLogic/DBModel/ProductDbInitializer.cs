@@ -18,7 +18,7 @@ namespace EasyBreath.BussinessLogic.DBModel
           {
                using (ProductsContext db = new ProductsContext())
                {
-                    if (db.Database.CreateIfNotExists())
+                    if (db.Database.Exists())
                     {
                          if (!db.Products.Any())
                          {
