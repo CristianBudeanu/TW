@@ -6,7 +6,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EasyBreath.Domain.Entities.ShoppingCart;
 
 namespace EasyBreath.Domain.Entities.User
 {
@@ -22,10 +21,10 @@ namespace EasyBreath.Domain.Entities.User
           [Required]
           public string Email { get; set; }
 
-          [Column(TypeName = "datetime2")]
+          [DataType(DataType.Date)]
           public DateTime LoginDateTime { get; set; }
 
-          [Column(TypeName = "datetime2")]
+          [DataType(DataType.Date)]
           public DateTime RegisterDateTime { get; set; }
 
           [Required]

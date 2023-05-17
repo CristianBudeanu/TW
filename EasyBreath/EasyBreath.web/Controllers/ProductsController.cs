@@ -17,13 +17,11 @@ namespace EasyBreath.web.Controllers
      {
           private readonly ISession _session;
           private readonly IProduct _product;
-          private readonly ICart _cart;
           public ProductsController()
           {
                var bl = new BussinessLogic.BusinessLogic();
                _session = bl.GetSessionBL();
                _product = bl.GetProductBL();
-               _cart = bl.GetCartBL();
 
 
           }
@@ -58,7 +56,6 @@ namespace EasyBreath.web.Controllers
                var response = _product.ValidateCreateProduct(productData);
                if (response.Status)
                {
-
                     return RedirectToAction("Index", "Products");
                }
                else

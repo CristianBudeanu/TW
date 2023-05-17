@@ -1,152 +1,145 @@
 ﻿@using EasyBreath.web.Extensions
 
 <header id="header" class="fixed-top">
-     <div class="container d-flex align-items-center justify-content-lg-between">
+    <div class="container d-flex align-items-center justify-content-lg-between">
 
-          @{
-               var restrictedPaths = new List<string>{
+        @{
+            var restrictedPaths = new List<string>{
                "/Auth/LoginPage",
                "/Auth/RegisterPage",
                "/Users",
                "/Users/Index",
                "/Users/Profile"
                };
-          }
+        }
 
-          @if (restrictedPaths.Contains(Request.Path) || (Request.Path.StartsWith("/Users/Delete/") && int.TryParse(Request.Path.Split('/').Last(), out _)) || (Request.Path.StartsWith("/Users/Edit/") && int.TryParse(Request.Path.Split('/').Last(), out _)))
-          {
-               <h1 class="logo me-auto me-lg-0"><a href="@Url.Action("Index", "Home")">Eb<span>.</span></a></h1>
-               <i class="bi bi-list mobile-nav-toggle"></i>
-               <img src="~/assets/img/moon.png" id="iconMoon">
+        @if (restrictedPaths.Contains(Request.Path) || (Request.Path.StartsWith("/Users/Delete/") && int.TryParse(Request.Path.Split('/').Last(), out _)) || (Request.Path.StartsWith("/Users/Edit/") && int.TryParse(Request.Path.Split('/').Last(), out _)))
+        {
+            <h1 class="logo me-auto me-lg-0"><a href="@Url.Action("Index", "Home")">Eb<span>.</span></a></h1>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+                <img src="~/assets/img/moon.png" id="iconMoon">
 
-          }
-          else
-          {
-               <h1 class="logo me-auto me-lg-0"><a href="@Url.Action("Index", "Home")">Eb<span>.</span></a></h1>
-               <nav id="navbar" class="navbar order-last order-lg-0">
+        }
+        else
+        {
+            <h1 class="logo me-auto me-lg-0"><a href="@Url.Action("Index", "Home")">Eb<span>.</span></a></h1>
+            <nav id="navbar" class="navbar order-last order-lg-0">
 
-                    @if (Request.Path == "/Home/Vitamins")
-                    {
+                @if (Request.Path == "/Home/Vitamins")
+                {
 
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                              <li><a class="nav-link scrollto" href="#vitamins">Vitamins</a></li>
-                              <li><a class="nav-link scrollto" href="#supplements">Supplements</a></li>
-                         </ul>
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#vitamins">Vitamins</a></li>
+                        <li><a class="nav-link scrollto" href="#supplements">Supplements</a></li>
+                    </ul>
 
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
 
-                    }
-                    else if (Request.Path == "/Home/Nutrition")
-                    {
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                              <li><a class="nav-link scrollto" href="#nutrition">Nutrition</a></li>
-                              <li><a class="nav-link scrollto" href="#food">Food groups</a></li>
-                         </ul>
+                }
+                else if (Request.Path == "/Home/Nutrition")
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#nutrition">Nutrition</a></li>
+                        <li><a class="nav-link scrollto" href="#food">Food groups</a></li>
+                    </ul>
 
-<<<<<<< HEAD
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
-                    }
-                    else if (Request.Path == "/Home/Diete")
-                    {
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                              <li><a class="nav-link scrollto" href="#ccant">Calorie Counting</a></li>
-                              <li><a class="nav-link scrollto" href="#hpdiet">High-Protein</a></li>
-                              <li><a class="nav-link scrollto " href="#kdiet">Keto</a></li>
-                              <li><a class="nav-link scrollto" href="#lcdiet">Low-Carb</a></li>
-                              <li><a class="nav-link scrollto" href="#lfdiet">Low-Fat</a></li>
-                              <li><a class="nav-link scrollto" href="#mdiet">Mediterranean</a></li>
-                              <li><a class="nav-link scrollto" href="#vdiet">Vegetarian</a></li>
-                              <li><a class="nav-link scrollto" href="#vegdiet">Vegan</a></li>
-                         </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
+                }
+                else if (Request.Path == "/Home/Diete")
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#ccant">Calorie Counting</a></li>
+                        <li><a class="nav-link scrollto" href="#hpdiet">High-Protein</a></li>
+                        <li><a class="nav-link scrollto " href="#kdiet">Keto</a></li>
+                    </ul>
 
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
-                    }
-                    else if (Request.Path == "/Home/Event")
-                    {
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                              <li><a class="nav-link scrollto" href="#about">About</a></li>
-                              <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
-                              <li><a class="nav-link scrollto" href="#register">Register</a></li>
-                         </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
+                }
+                else if (Request.Path == "/Home/Event")
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#about">About</a></li>
+                        <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
+                        <li><a class="nav-link scrollto" href="#register">Register</a></li>
+                    </ul>
 
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
-                    }
-                    else if (Request.Path == "/Home/Portfolio")
-                    {
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                         </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
+                }
+                else if (Request.Path == "/Home/Portfolio")
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                    </ul>
 
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
-                    }
-                    else if (Request.Path == "/Home/Sport")
-                    {
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                              <li><a class="nav-link scrollto" href="#about">About</a></li>
-                              <li><a class="nav-link scrollto" href="#activities">Popular Activities</a></li>
-                         </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
+                }
+                else if (Request.Path == "/Home/Sport")
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#about">About</a></li>
+                        <li><a class="nav-link scrollto" href="#activities">Popular Activities</a></li>
+                    </ul>
 
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
-                    }
-                    else if (Request.Path == "/Home/Statistic")
-                    {
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                              <li><a class="nav-link scrollto" href="#about">Healthy Eating</a></li>
-                              <li><a class="nav-link scrollto" href="#factivity">Physical Activity</a></li>
-                              <li><a class="nav-link scrollto" href="#habits">Healthy Habits</a></li>
-                              <li><a class="nav-link scrollto" href="#video">Video</a></li>
-                         </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
+                }
+                else if (Request.Path == "/Home/Statistic")
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#about">Healthy Eating</a></li>
+                        <li><a class="nav-link scrollto" href="#factivity">Physical Activity</a></li>
+                        <li><a class="nav-link scrollto" href="#habits">Healthy Habits</a></li>
+                        <li><a class="nav-link scrollto" href="#video">Video</a></li>
+                    </ul>
 
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
-                    }
-                    else
-                    {
-                         <ul>
-                              <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
-                              <li><a class="nav-link scrollto" href="#about">About</a></li>
-                              <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                              <li><a class="nav-link scrollto " href="#team">Team</a></li>
-                              <li> @Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { @class = "nav-link " })</li>
-                              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                         </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
+                }
+                else
+                {
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a class="nav-link scrollto" href="#about">About</a></li>
+                        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                        <li><a class="nav-link scrollto " href="#team">Team</a></li>
+                        <li> @Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { @class = "nav-link " })</li>
+                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    </ul>
 
-                         <i class="bi bi-list mobile-nav-toggle"></i>
-                         <img src="~/assets/img/moon.png" id="iconMoon">
-                    }
-               </nav>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <img src="~/assets/img/moon.png" id="iconMoon">
+                }
+            </nav>
 
-               if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
-               {
-                    <a href="@Url.Action("Profile", "Users")" class="user_name; btn btn-dark">@System.Web.HttpContext.Current.GetMySessionObject().Username</a>
-                    if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
-                    {
-                         <a href="@Url.Action("Index", "Users")" class="get-started-btn">AllUsers</a>
-                    }
-                    <a href="@Url.Action("Logout", "Auth")" class="button">Logout</a>
-                    <a href="@Url.Action("Index", "Cart", new { userId = System.Web.HttpContext.Current.GetMySessionObject().Id })" class="get-started-btn">Cart</a>
-               }
-               else
-               {
-                    <div>
-                         <a href="@Url.Action("LoginPage", "Auth")" class="get-started-btn">Login</a>
-                         <a href="@Url.Action("RegisterPage", "Auth")" class="get-started-btn">Sign up</a>
+            if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+            {
+                <a href="@Url.Action("Profile", "Users")" class="user_name; btn btn-dark">@System.Web.HttpContext.Current.GetMySessionObject().Username</a>
+                if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+                {
+                    <a href="@Url.Action("Index", "Users")" class="get-started-btn">AllUsers</a>
+                }
+                <a href="@Url.Action("Logout", "Auth")" class="button">Logout</a>
+            }
+            else
+            {
+                <div>
+                    <a href="@Url.Action("LoginPage", "Auth")" class="get-started-btn">Login</a>
+                    <a href="@Url.Action("RegisterPage", "Auth")" class="get-started-btn">Sign up</a>
 
-                    </div>
-               }
+                </div>
+            }
 
-          }
-     </div>
+        }
+    </div>
 </header>

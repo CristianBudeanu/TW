@@ -21,7 +21,7 @@
 
      </div>
 </section>
-          }
+
 <section>
      <div class="container text-register" data-aos="fade-up" style="margin-top: -50px">
           <h2 style="text-align: center">Vitamins & supplements</h2>
@@ -54,13 +54,7 @@
                                         @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
                                         {
                                         <p>
-                                             <td>
-                                                  @using (Html.BeginForm("AddToCart", "Cart", new { productId = item.Id, userId = user.Id }, FormMethod.Post))
-                                                  {
-                                                       @Html.AntiForgeryToken()
-                                                       <button type="submit" class="btn-link">Add to Cart</button>
-                                                  }
-                                             </td>
+                                             @Html.ActionLink("AddToCart", "AddToCart", "Cart", new { id = item.Id }, null)
 
                                         </p>
                                         }
@@ -75,30 +69,3 @@
      </div>
 </section>
 
-@*<script>
-    $(document).ready(function () {
-        $("#addToCartButton").click(function (e) {
-            e.preventDefault(); // Prevent the default link behavior
-
-            var productId = $(this).attr("data-productId");
-            var userId = $(this).attr("data-userId");
-
-            // Send an AJAX request to the AddToCart action
-            $.ajax({
-                url: "/Cart/AddToCart",
-                type: "POST",
-                data: { productId: productId, userId: userId },
-                success: function (response) {
-                    // Handle the success response, if needed
-                    console.log("Product added to cart successfully.");
-                },
-                error: function (xhr, status, error) {
-                    // Handle the error response, if needed
-                    console.log("Error adding the product to cart: " + error);
-                }
-            });
-        });
-    });
-</script>*@
-=======
->>>>>>> 754516fa350b8f2e2a30dcde5f595d06eade698c

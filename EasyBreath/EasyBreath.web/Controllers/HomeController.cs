@@ -2,19 +2,12 @@
 
 namespace EasyBreath.web.Controllers
 {
-     public class HomeController : BaseController
+     public class HomeController : Controller
      {
           // GET: Home Page
           public ActionResult Index()
           {
-               SessionStatus();
-               if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
-               {
-                    System.Web.HttpContext.Current.Session.Clear();
-                    //return RedirectToAction("LoginPage", "Auth");
-               }
                return View();
-
           }
           public ActionResult Portfolio()
           {
