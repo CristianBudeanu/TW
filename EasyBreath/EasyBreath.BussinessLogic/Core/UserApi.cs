@@ -101,7 +101,7 @@ namespace EasyBreath.BussinessLogic.Core
                               response.Status = false;
                               return response;
                          }
-                         using (var dbC = new CartsContext())
+                         using (var dbC = new CartContext())
                          {
                               var items = dbC.Carts
                              .Where(item => item.CartId == deleteUser.Id)

@@ -25,7 +25,7 @@ namespace EasyBreath.BussinessLogic
                return ReturnDeleteFromCart(item, userId);
           }
 
-          public List<ShoppingItemCart> GetCartItemList(User user)
+          public List<Cart> GetCartItemList(User user)
           {
                return AllCartItems(user);
           }

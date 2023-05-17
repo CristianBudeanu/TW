@@ -56,7 +56,7 @@
     <Compile Include="Entities\Response\CookieResponse.cs" />
     <Compile Include="Entities\Response\ServiceResponse.cs" />
     <Compile Include="Entities\Session\SDbModel.cs" />
-    <Compile Include="Entities\ShoppingCart\ShoppingItemCart.cs" />
+    <Compile Include="Entities\ShoppingCart\Cart.cs" />
     <Compile Include="Entities\User\User.cs" />
     <Compile Include="Enum\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

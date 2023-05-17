@@ -5,7 +5,7 @@ namespace EasyBreath.BussinessLogic.DBModel
 {
      public class SessionContext : DbContext
      {
-          public SessionContext() : base("name=EasyBreathDB") { }
+          public SessionContext() : base("name=EasyBreath") { }
 
           public virtual DbSet<SDbModel> Sessions { get; set; }
      }

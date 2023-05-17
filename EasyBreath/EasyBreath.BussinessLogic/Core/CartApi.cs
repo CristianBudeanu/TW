@@ -17,15 +17,16 @@ namespace EasyBreath.BussinessLogic.Core
      public class CartApi
      {
 
-          public List<ShoppingItemCart> AllCartItems(User user)
+          public List<Cart> AllCartItems(User user)
           {
-               using (var db = new CartsContext())
+               using (var db = new CartContext())
                {
-
-                         var existingCart = db.Carts.FirstOrDefault(u => u.CartId == user.Id);
+                    try
+                    {
+                         var existingCart = db.Carts.FirstOrDefault(u => u.Id == user.Id);
                          if (existingCart == null)
                          {
-                              return new List<ShoppingItemCart>();
+                              return new List<Cart>();
                          }
                          else
                          {
@@ -43,12 +44,17 @@ namespace EasyBreath.BussinessLogic.Core
                                    }
                               }
 
-                              return items.Select(item => new ShoppingItemCart
+                              return items.Select(item => new Cart
                               {
                                    Product = item.Product,
                                    Quantity = item.Quantity
                               }).ToList();
                          }
+                    }
+                    catch(Exception ex)
+                    {
+                         return new List<Cart>();
+                    }
                     
                }
           }
@@ -56,7 +62,7 @@ namespace EasyBreath.BussinessLogic.Core
           public ServiceResponse ReturnAddToCart(Product data, int userId)
           {
                var response = new ServiceResponse();
-               using (var db = new CartsContext())
+               using (var db = new CartContext())
                {
                     try
                     {
@@ -89,7 +95,7 @@ namespace EasyBreath.BussinessLogic.Core
                          }
                          else if (data.Amount > 0)
                          {
-                              var newCart = new ShoppingItemCart()
+                              var newCart = new Cart()
                               {
                                    CartId = userId,
                                    ProductId = data.Id,
@@ -120,7 +126,7 @@ namespace EasyBreath.BussinessLogic.Core
           public ServiceResponse ReturnDeleteFromCart(Product data, int userId)
           {
                var response = new ServiceResponse();
-               using (var db = new CartsContext())
+               using (var db = new CartContext())
                {
                     try
                     {

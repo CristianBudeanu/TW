@@ -58,8 +58,7 @@
     <Compile Include="Core\ProductApi.cs" />
     <Compile Include="Core\SessionApi.cs" />
     <Compile Include="Core\UserApi.cs" />
-    <Compile Include="DBModel\CartDbInitializing.cs" />
-    <Compile Include="DBModel\CartsContext.cs" />
+    <Compile Include="DBModel\CartContext.cs" />
     <Compile Include="DBModel\ProductDbInitializer.cs" />
     <Compile Include="DBModel\ProductsContext.cs" />
     <Compile Include="DBModel\SessionContext.cs" />
@@ -69,6 +68,11 @@
     <Compile Include="Interfaces\IProduct.cs" />
     <Compile Include="Interfaces\ISession.cs" />
     <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Migrations\202305170719201_Initial.cs" />
+    <Compile Include="Migrations\202305170719201_Initial.designer.cs">
+      <DependentUpon>202305170719201_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProductBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -102,6 +106,11 @@
       <Project>{78fbc0e0-daa9-41d2-a378-20faae175fbc}</Project>
       <Name>EasyBreath.Helpers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202305170719201_Initial.resx">
+      <DependentUpon>202305170719201_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
