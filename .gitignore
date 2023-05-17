@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> ad6d93de6dd6484e2316fc26405d1e11d369c94e
 EasyBreath/.vs/
 EasyBreath/EasyBreath.web/bin/
 EasyBreath/EasyBreath.web/obj/
@@ -13,6 +16,7 @@ EasyBreath/EasyBreath.Domain/EasyBreath.Domain.csproj
 EasyBreath/EasyBreath.web/EasyBreath.web.csproj
 EasyBreath/EasyBreath.web/EasyBreath.web.csproj.user
 EasyBreath\EasyBreath.Helpers/EasyBreath.Helpers.csproj
+<<<<<<< HEAD
 /EasyBreath/.vs/
 /EasyBreath/EasyBreath.web/bin/
 /EasyBreath/EasyBreath.web/obj/
@@ -23,13 +27,21 @@ EasyBreath\EasyBreath.Helpers/EasyBreath.Helpers.csproj
 /EasyBreath/EasyBreath.Helpers/bin
 /EasyBreath/EasyBreath.Helpers/obj
 /EasyBreath/EasyBreath.BussinessLogic/EasyBreath.BussinessLogic.csproj
+=======
+>>>>>>> ad6d93de6dd6484e2316fc26405d1e11d369c94e
 /EasyBreath/EasyBreath.BussinessLogic/EasyBreath.BussinessLogic.csproj
 EasyBreath/packages/
 /EasyBreath/EasyBreath.web/App_Data/EasyBreathDB.mdf
+
 
 # SQL Server files
 .mdf
 .ldf
 .ndf
+<<<<<<< HEAD
 /EasyBreath/EasyBreath.web/App_Data/EasyBreathDB_log. ldf
 /EasyBreath/EasyBreath.web/App_Data/EasyBreathDB_log.ldf
+=======
+EasyBreath/EasyBreath.web/App_Data/EasyBreathDB_log.ldf
+
+>>>>>>> ad6d93de6dd6484e2316fc26405d1e11d369c94e

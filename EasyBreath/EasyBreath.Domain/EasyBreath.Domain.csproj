@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Carts\Cart.cs" />
+    <Compile Include="Entities\Event\Events.cs" />
     <Compile Include="Entities\Products\Product.cs" />
     <Compile Include="Entities\Response\CookieResponse.cs" />
     <Compile Include="Entities\Response\ServiceResponse.cs" />

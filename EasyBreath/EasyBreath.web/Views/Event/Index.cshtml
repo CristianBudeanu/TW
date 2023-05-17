@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EasyBreath.Domain.Entities.Event.Events>
+@using EasyBreath.web.Extensions
+@{
+     var event1 = System.Web.HttpContext.Current.GetMySessionObject();
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="breadcrumbs" class="breadcrumbs" style="margin-top: 59px">
+     <div class="container text-register">
+
+          <div class="d-flex justify-content-between align-items-center">
+               <h2 class="page-title">Event</h2>
+               <ol>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li>Event</li>
+               </ol>
+          </div>
+          @if ((event1 != null) && (event1.AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR))
+          {
+               <h2 style="text-align: right">
+
+                    @Html.ActionLink("Add Event", "CreatePage")
+
+               </h2>
+          }
+     </div>
+</section>
+
+<section>
+     @foreach (var item in Model)
+     {
+          <section id="about" class="about text-register">
+               <div class="container" data-aos="fade-up">
+                    <div class="row" style="margin-top: -60px">
+                         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                              <img src="@Html.DisplayFor(modelItem => item.Thumbnail)" class="img-fluid" style="width: 500px; height: 400px ; margin-left: 150px; box-shadow: 15px 15px 10px #BBF; border-radius: 25px; border: 8px solid #ffc93c; ">
+                         </div>
+                         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+                              <p>
+                                   @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+                                   {
+                                        if (System.Web.HttpContext.Current.GetMySessionObject().AccessLevel == EasyBreath.Domain.Enum.URole.ADMINISTRATOR)
+                                        {
+                                             <button class="btn btn-dark">
+                                                  @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                                  @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                                  @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                                             </button>
+                                        }
+                                   }
+                              </p>
+                              <h3>@Html.DisplayFor(modelItem => item.Name) </h3>
+                              <h4>@Html.DisplayFor(modelItem => item.DateEvent)</h4>
+                              <h4>@Html.DisplayFor(modelItem => item.Location)</h4>
+                              <p class="fst-italic">
+                                   @Html.DisplayFor(modelItem => item.Description)
+                              </p>
+                         </div>
+                    </div>
+
+               </div>
+          </section>
+     <hr />
+     }
+</section>

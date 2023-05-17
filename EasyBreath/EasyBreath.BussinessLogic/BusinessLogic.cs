@@ -16,5 +16,13 @@ namespace EasyBreath.BussinessLogic
           {
                return new UserBL();
           }
+          public ICart GetCartBL()
+          {
+               return new CartBL();
+          }
+          public IEvent GetEventBL()
+          {
+               return new EventBL();
+          }
      }
 }

@@ -10,5 +10,5 @@ namespace EasyBreath.BussinessLogic.DBModel
 
           }
           public DbSet<User> Users { get; set; }
-     }
+    }
 }
