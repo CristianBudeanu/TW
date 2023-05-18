@@ -58,7 +58,7 @@
                                                   @using (Html.BeginForm("AddToCart", "Carts", new { productId = item.Id, userId = user.Id }, FormMethod.Post))
                                                   {
                                                        @Html.AntiForgeryToken()
-                                                       <button type="submit" class="btn-link">Add to Cart</button>
+                                                       <button type="submit" class=" btn btn-dark">Add to Cart</button>
                                                   }
                                              </td>
 

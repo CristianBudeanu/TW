@@ -412,10 +412,8 @@
     <Content Include="Scripts\jquery-3.6.3.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.3.min.map" />
     <Content Include="Views\Home\Diete.cshtml" />
-    <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Home\Sport.cshtml" />
     <Content Include="Views\Home\Statistic.cshtml" />
-    <Content Include="Views\Home\Event.cshtml" />
     <Content Include="Views\Home\Nutrition.cshtml" />
     <Content Include="Views\Home\Vitamins.cshtml" />
     <Content Include="Views\Auth\LoginPage.cshtml" />
@@ -433,9 +431,9 @@
     <Content Include="Views\Carts\AddToCart.cshtml" />
     <Content Include="Views\Carts\Index.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
-    <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\Delete.cshtml" />
     <Content Include="Views\Event\CreatePage.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
