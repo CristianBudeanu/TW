@@ -15,6 +15,7 @@ namespace EasyBreath.web
                CartDbInitializer.Seed();
                UserDbInitializer.Seed();
                ProductDbInitializer.Seed();
+               EventsDbInitializer.Seed();
                
                // Code that runs on application startup
                AreaRegistration.RegisterAllAreas();
