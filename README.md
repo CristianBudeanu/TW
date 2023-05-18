@@ -14,14 +14,14 @@ The members of team are:
 
 ## Preview
 *First page is Index.cshtml* 
-https://github.com/CristianBudeanu/TW/assets/52885053/3822bed0-4f1a-4cae-a567-4b2cd6b5a529
+https://github.com/CristianBudeanu/TW/assets/52885053/7e6fb60f-6346-4602-8396-839e1ee2baa2
 
 # Demo
 ## Project functionalities
 The EasyBreath platform has a list of available functionalities among which it can be listed:
 
 *Login and user registration. The platform has Admin and User roles, where administrator can view list of all user.* 
-![image](https://github.com/CristianBudeanu/TW/assets/52885053/2e9ee050-5ed7-41d7-b980-b8b40a09cd3d)
+![image](https://github.com/CristianBudeanu/TW/assets/52885053/85843ca4-5141-477c-b528-700ad0f4dc55)
 
 *Admin can edit, delete or modify user information.*
 ![image](https://github.com/CristianBudeanu/TW/assets/52885053/7e3ce6fc-94ee-49e3-b797-d902d193b77a)
@@ -29,11 +29,14 @@ The EasyBreath platform has a list of available functionalities among which it c
 *Registration for a health event.*
 ![image](https://github.com/CristianBudeanu/TW/assets/52885053/cc6f36f1-1a0d-4676-8cfd-f84eb18a7397)
 
+*Delete health event*
+[![Watch the video](https://github.com/CristianBudeanu/TW/assets/52885053/679dca45-695c-4379-84a3-1a86187207aa)](https://github.com/CristianBudeanu/TW/assets/52885053/87bf80db-6101-4bfe-8fa7-001a538aed3a)
+
 *User can buy our products*
 ![image](https://github.com/CristianBudeanu/TW/assets/52885053/834729db-28d1-4e11-8962-e80f7eaa68d6)
 
 *User can add some products*
-![image](https://github.com/CristianBudeanu/TW/assets/52885053/d305a0aa-4dea-49c2-968d-6b085a396aa3)
+[![Watch the video](https://github.com/CristianBudeanu/TW/assets/52885053/23331475-3b03-44cb-8fb4-9f1b64ccca0e)](https://github.com/CristianBudeanu/TW/assets/52885053/e9029362-6358-44c5-8d8e-4f21fb628121)
 
 *General information about nutrition.*
 ![image](https://github.com/CristianBudeanu/TW/assets/52885053/df57e495-b638-4fb9-a6c4-8a9595fe8ba4)
