@@ -24,6 +24,5 @@ namespace EasyBreath.Domain.Entities.Event
           public string Location { get; set; }
           [Required]
           public string Thumbnail { get; set; }
-          //public int Amount { get; set; }
      }
 }
