@@ -5,6 +5,7 @@ using EasyBreath.Domain.Entities.User;
 using EasyBreath.Domain.Enum;
 using EasyBreath.web.ActionAtributes;
 using EasyBreath.web.Extensions;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -15,10 +16,12 @@ namespace EasyBreath.web.Controllers
 
      {
           private readonly IUser _user;
+          private readonly ISession _session;
           public UsersController()
           {
                var bl = new BussinessLogic.BusinessLogic();
                _user = bl.GetUsertBL();
+               _session = bl.GetSessionBL();
           }
           [AdminMod]
           public ActionResult Index()
@@ -76,20 +79,28 @@ namespace EasyBreath.web.Controllers
                          sessionObject.Username = editUser.Username;
                          sessionObject.Email = editUser.Email;
                          sessionObject.AccessLevel = editUser.AccessLevel;
-                         System.Web.HttpContext.Current.SetMySessionObject(sessionObject);
-                         SessionStatus();
-                         return RedirectToAction("LoginPage", "Auth");
+
+                         var cookieResponse = _session.GenCookie(sessionObject.Username);
+                         if (cookieResponse != null)
+                         {
+                              ControllerContext.HttpContext.Response.Cookies.Add(cookieResponse.Cookie);
+                              return RedirectToAction("Index", "Home");
                          }
                          else
                          {
-                              return RedirectToAction("Index", "Home");
+                              throw new Exception();
                          }
                     }
                     else
                     {
-                         ModelState.AddModelError("Username or email already exists", response.StatusMessage);
-                         return View(editUser);
-                    }          
+                         return RedirectToAction("Index", "Home");
+                    }
+               }
+               else
+               {
+                    ModelState.AddModelError("Username or email already exists", response.StatusMessage);
+                    return View(editUser);
+               }
           }
 
           [AdminMod]
