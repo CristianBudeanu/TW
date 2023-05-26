@@ -68,6 +68,7 @@
     <Compile Include="DBModel\UserContext.cs" />
     <Compile Include="DBModel\UserDbInitializer.cs" />
     <Compile Include="EventBL.cs" />
+    <Compile Include="DBModel\EventsDbInitializer.cs" />
     <Compile Include="Interfaces\ICart.cs" />
     <Compile Include="Interfaces\IEvent.cs" />
     <Compile Include="Interfaces\IProduct.cs" />

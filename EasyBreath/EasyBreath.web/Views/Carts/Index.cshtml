@@ -1,59 +1,70 @@
-﻿@model IEnumerable < EasyBreath.Domain.Entities.Carts.Cart>
+﻿@model IEnumerable<EasyBreath.Domain.Entities.Carts.Cart>
 @using EasyBreath.web.Extensions
 @{
-     Layout = null;
+     Layout = "~/Views/Shared/_Layout.cshtml";
      var user = System.Web.HttpContext.Current.GetMySessionObject();
 }
 
-<!DOCTYPE html>
+<section id="breadcrumbs" class="breadcrumbs" style="margin-top: 69px">
+     <div class="container text-register">
+          <div class="d-flex justify-content-between align-items-center">
+               <h2 class="page-title">Shopping Cart</h2>
+               <ol>
+                    <li><a href="@Url.Action("Index", "Products")">Shop</a></li>
+                    <li>Shop Cart</li>
+               </ol>
+          </div>
 
-<html>
-<head>
-     <meta name="viewport" content="width=device-width" />
-     <title>Index</title>
-</head>
-<body>
-     <p>
-          @Html.ActionLink("Create New", "Create")
-     </p>
-     <table class="table">
-          <tr>
-               <th>
-                    @Html.DisplayNameFor(model => model.Product.Name)
-               </th>
-               <th>
-                    @Html.DisplayNameFor(model => model.Product.Price)
-               </th>
-               <th>
-                    @Html.DisplayNameFor(model => model.Quantity)
-               </th>
-               <th></th>
-          </tr>
+     </div>
+</section>
 
-          @foreach (var item in Model)
-          {
-               <tr>
-                    <td>
-                         @Html.DisplayFor(modelItem => item.Product.Name)
-                    </td>
-                    <td>
-                         @Html.DisplayFor(modelItem => item.Product.Price)
-                    </td>
-                    <td>
-                         @Html.DisplayFor(modelItem => item.Quantity)
-                    </td>
-                    <td>
-                         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                         @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                         @using (Html.BeginForm("DeleteFromCart", "Carts", new { productId = item.Product.Id, userId = user.Id }, FormMethod.Post))
-                         {
-                              @Html.AntiForgeryToken()
-                              <button type="submit" class="btn-link">Delete From Cart</button>
-                         }
-                    </td>
-               </tr>
-          }
 
-     </table>
-</body>
-</html>
+<section class="h-100" style="background-color: #eee;">
+     <div class="container h-100 py-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+               <div class="col-10">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                         <div>
+                              <p class="mb-0">
+                                   <span class="text-muted">Sort by:</span> <a href="#!" class="text-body">
+                                        price <i class="fas fa-angle-down mt-1"></i>
+                                   </a>
+                              </p>
+                         </div>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+
+                         <div class="card rounded-3 mb-4">
+                              <div class="card-body p-4">
+                                   <div class="row d-flex justify-content-between align-items-center">
+                                        <div class="col-md-2 col-lg-2 col-xl-2">
+                                             <img src="@Html.DisplayFor(modelItem => item.Product.Thumbnail)"
+                                                  class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 col-xl-3">
+                                             <p class="lead fw-normal mb-2">@Html.DisplayFor(modelItem => item.Product.Name)</p>
+                                        </div>
+                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                             <p>Quantity: @Html.DisplayFor(modelItem => item.Quantity)</p>
+                                        </div>
+                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                             <h5 class="mb-0">$@Html.DisplayFor(modelItem => item.Product.Price)</h5>
+                                        </div>
+                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                             <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                             @using (Html.BeginForm("DeleteFromCart", "Carts", new { productId = item.Product.Id, userId = user.Id }, FormMethod.Post))
+                                             {
+                                                  @Html.AntiForgeryToken()
+                                                  <button type="submit" class="btn-link">Delete</button>
+                                             }
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    }
+                    </div>
+          </div>
+     </div>
+</section>
