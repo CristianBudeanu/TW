@@ -153,6 +153,19 @@ namespace EasyBreath.BussinessLogic.Core
                               return response;
                          }
 
+                         using (var dbC = new CartContext())
+                         {
+                              var items = dbC.Carts
+                             .Where(item => item.ProductId == deleteProduct.Id)
+                             .ToList();
+
+                              foreach (var item in items)
+                              {
+                                   var itemCart = dbC.Carts.FirstOrDefault(p => p.ProductId == item.ProductId);
+                                   dbC.Carts.Remove(itemCart);
+                              }
+                         }
+
                          db.Products.Remove(existingProduct);
 
                          response.StatusMessage = "Product deleted successfully";
