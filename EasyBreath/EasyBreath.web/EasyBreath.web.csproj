@@ -443,7 +443,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EasyBreath.BussinessLogic\EasyBreath.BussinessLogic.csproj">

@@ -19,12 +19,12 @@
 </section>
 
 
-<section class="h-100" style="background-color: #eee;">
-     <div class="container h-100 py-5">
+<section class="h-100 text-register" style="background-color: #eee;">
+     <div class="container h-100 py-5 text-register">
           <div class="row d-flex justify-content-center align-items-center h-100">
                <div class="col-10">
 
-                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4 text-register">
                          <div>
                               <p class="mb-0">
                                    <span class="text-muted">Sort by:</span> <a href="#!" class="text-body">
@@ -36,10 +36,10 @@
                     @foreach (var item in Model)
                     {
 
-                         <div class="card rounded-3 mb-4">
-                              <div class="card-body p-4">
+                         <div class="card rounded-3 mb-4 text-register">
+                              <div class="card-body p-4 text-register">
                                    <div class="row d-flex justify-content-between align-items-center">
-                                        <div class="col-md-2 col-lg-2 col-xl-2">
+                                        <div class="col-md-2 col-lg-2 col-xl-2 text-register">
                                              <img src="@Html.DisplayFor(modelItem => item.Product.Thumbnail)"
                                                   class="img-fluid rounded-3" alt="Cotton T-shirt">
                                         </div>
