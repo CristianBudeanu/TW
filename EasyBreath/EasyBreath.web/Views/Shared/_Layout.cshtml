@@ -217,10 +217,12 @@
                location.reload(); // Refresh the page
           }
 
-          myButton.addEventListener("click", function () {
-               myPopup.classList.add("show");
+          document.getElementById("myButton").addEventListener("click", function () {
+               var popup = document.getElementById("myPopup");
+               popup.classList.add("show");
           });
      </script>
+
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
      @if (ViewContext.RouteData.Values["controller"].ToString() == "Cart")
@@ -232,12 +234,12 @@
                          // Show the pop-up message
                          setTimeout(function () {
                               alert(message); // Display the pop-up message after the specified delay
-                         }, 60000); 
+                         }, 3000);
                     }
                });
           </script>
-
      }
+
 
 </body>
 </html>
