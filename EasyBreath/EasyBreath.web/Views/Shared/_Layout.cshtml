@@ -210,6 +210,9 @@
           });
      </script>
 
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
      <script>
           function closePopup() {
                var popup = document.getElementById("myPopup");
@@ -223,9 +226,7 @@
           });
      </script>
 
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-     @if (ViewContext.RouteData.Values["controller"].ToString() == "Cart")
+     @if (ViewContext.RouteData.Values["controller"].ToString() == "Carts")
      {
           <script>
                $(document).ready(function () {

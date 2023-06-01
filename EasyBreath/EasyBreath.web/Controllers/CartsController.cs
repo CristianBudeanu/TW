@@ -60,29 +60,14 @@ namespace EasyBreath.web.Controllers
           }
 
           [AuthorizedMod]
-          //[HttpPost]
-          public async Task<ActionResult> BuyFromCart(int productId, int userId, bool isDeleted = false)
+          [HttpPost]
+          public async Task<ActionResult> BuyFromCart(int productId, int userId)
           {
                var product = _product.GetProductById(productId);
                _cart.ValidateBuyFromCart(product, userId);
-
-               // Delete the product and set `isDeleted` accordingly
-
-               await Task.Delay(3000);
-
-               if (isDeleted)
-               {
-                    TempData["Message"] = "Product deleted successfully!";
-               }
-               else
-               {
-                    TempData["Message"] = "Failed to delete the product.";
-               }
-
+               await Task.Delay(2500);
                return RedirectToAction("Index", "Carts", new { userId });
           }
-
-
 
           [AuthorizedMod]
           [HttpPost]
