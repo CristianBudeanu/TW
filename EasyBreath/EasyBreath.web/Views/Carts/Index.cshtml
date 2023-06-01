@@ -14,12 +14,29 @@
                     <li>Shop Cart</li>
                </ol>
           </div>
-
      </div>
 </section>
 
 
 <section class="h-100 text-register" style="background-color: #eee;">
+
+     @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+     {
+          using (Html.BeginForm("BuyFromCart", "Carts", new { userId = user.Id }, FormMethod.Post))
+          {
+               @Html.AntiForgeryToken()
+               <button id="myButton" class="btn btn-success" style="margin-left: 1200px">
+                    Buy all
+               </button>
+
+               <div id="myPopup" class="popup">
+                    <div class="popup-content">
+                         <h1 style="color: green;">Successful!</h1>
+                         <p>The products has been successfully purchased.</p>
+                    </div>
+               </div>
+          }
+     }
      <div class="container h-100 py-5 text-register">
           <div class="row d-flex justify-content-center align-items-center h-100">
                <div class="col-10">
@@ -51,26 +68,12 @@
                                                   <button type="submit" class="btn btn-danger">Delete</button>
                                              }
                                              <br />
-                                             @using (Html.BeginForm("BuyFromCart", "Carts", new { productId = item.Product.Id, userId = user.Id }, FormMethod.Post))
-                                             {
-                                                  @Html.AntiForgeryToken()
-                                                  <button id="myButton" class="btn btn-success">
-                                                       Buy
-                                                  </button>
-
-                                                  <div id="myPopup" class="popup">
-                                                       <div class="popup-content">
-                                                            <h1 style="color: green;">Successful!</h1>
-                                                            <p>The product has been successfully purchased.</p>
-                                                       </div>
-                                                  </div>
-                                             }
                                         </div>
                                    </div>
                               </div>
                          </div>
                     }
-                    </div>
+               </div>
           </div>
      </div>
 </section>

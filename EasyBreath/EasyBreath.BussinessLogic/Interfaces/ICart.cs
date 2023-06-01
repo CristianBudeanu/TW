@@ -11,7 +11,7 @@ namespace EasyBreath.BussinessLogic.Interfaces
      {
           ServiceResponse ValidateAddToCart(Product item, int userId);
           ServiceResponse ValidateDeleteFromCart(Product item, int userId);
-          ServiceResponse ValidateBuyFromCart(Product item, int userId);
+          ServiceResponse ValidateBuyFromCart(int userId);
           List<Cart> GetCartItemList(User user);
      }
 }

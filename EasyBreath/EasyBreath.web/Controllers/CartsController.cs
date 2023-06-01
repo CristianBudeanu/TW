@@ -61,10 +61,9 @@ namespace EasyBreath.web.Controllers
 
           [AuthorizedMod]
           [HttpPost]
-          public async Task<ActionResult> BuyFromCart(int productId, int userId)
-          {
-               var product = _product.GetProductById(productId);
-               _cart.ValidateBuyFromCart(product, userId);
+          public async Task<ActionResult> BuyFromCart(int userId)
+          {   
+               _cart.ValidateBuyFromCart(userId);
                await Task.Delay(2500);
                return RedirectToAction("Index", "Carts", new { userId });
           }

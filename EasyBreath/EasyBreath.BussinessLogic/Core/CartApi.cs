@@ -166,7 +166,7 @@ namespace EasyBreath.BussinessLogic.Core
                }
           }
 
-          public ServiceResponse ReturnBuyFromCart(Product data, int userId)
+          public ServiceResponse ReturnBuyFromCart(int userId)
           {
                var response = new ServiceResponse();
                using (var db = new CartContext())
@@ -174,25 +174,32 @@ namespace EasyBreath.BussinessLogic.Core
                     try
                     {
                          //     // Check if the user already exists in the database
-                         var existingCart = db.Carts.FirstOrDefault(u => (u.CartId == userId) && (u.ProductId == data.Id));
+                         var existingCart = db.Carts.FirstOrDefault(u => (u.CartId == userId));
                          if (existingCart != null)
                          {
+                              var carts = db.Carts
+                             .Where(item => item.CartId == userId)
+                             .ToList();
 
-                              db.Carts.Remove(existingCart);
+                              foreach (var item in carts)
+                              {       
+                                   db.Carts.Remove(item);
+                              }
+                              
                               db.SaveChanges();
-                              response.StatusMessage = "Product buyed successfully";
+                              response.StatusMessage = "Products from cart buyed successfully";
                               response.Status = true;
                               return response;
 
                          }
-                         response.StatusMessage = "Product not found";
+                         response.StatusMessage = "Cart not found";
                          response.Status = false;
                          return response;
 
                     }
                     catch (Exception ex)
                     {
-                         response.StatusMessage = "An error occurred while deleting the item";
+                         response.StatusMessage = "An error occurred while buyng from cart";
                          response.Status = false;
                          //response.Exception = ex;
                     }
