@@ -1,9 +1,11 @@
 ﻿using EasyBreath.BussinessLogic.DBModel;
 using EasyBreath.BussinessLogic.Interfaces;
+using EasyBreath.Domain.Entities.User;
 using EasyBreath.web.ActionAtributes;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
-
+using System.Web.UI;
 
 namespace EasyBreath.web.Controllers
 {
@@ -56,6 +58,20 @@ namespace EasyBreath.web.Controllers
                     return RedirectToAction("Index", "Home");
                }
           }
+
+          [AuthorizedMod]
+          //[HttpPost]
+          public async Task<ActionResult> BuyFromCart(int productId, int userId)
+          {
+               var product = _product.GetProductById(productId);
+                    _cart.ValidateBuyFromCart(product, userId);
+
+                    await Task.Delay(3000);
+                    // Add JavaScript code to reload the page
+                    TempData["Message"] = "Popup message";
+                    return RedirectToAction("Index", "Carts", new {userId});
+          }
+
 
           [AuthorizedMod]
           [HttpPost]

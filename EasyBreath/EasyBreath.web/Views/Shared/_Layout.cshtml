@@ -12,6 +12,7 @@
      <meta content="" name="keywords">
 
      <!-- Favicons -->
+     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
      <link href="~/assets/img/chili-pepper.png" rel="icon">
      <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
      <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -208,6 +209,35 @@
 
           });
      </script>
+
+     <script>
+          function closePopup() {
+               var popup = document.getElementById("myPopup");
+               popup.classList.remove("show");
+               location.reload(); // Refresh the page
+          }
+
+          myButton.addEventListener("click", function () {
+               myPopup.classList.add("show");
+          });
+     </script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     @if (ViewContext.RouteData.Values["controller"].ToString() == "Cart")
+     {
+          <script>
+               $(document).ready(function () {
+                    var message = '<%= TempData["Message"] %>';
+                    if (message) {
+                         // Show the pop-up message
+                         setTimeout(function () {
+                              alert(message); // Display the pop-up message after the specified delay
+                         }, 60000); 
+                    }
+               });
+          </script>
+
+     }
 
 </body>
 </html>

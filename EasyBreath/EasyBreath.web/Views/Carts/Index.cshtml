@@ -24,15 +24,6 @@
           <div class="row d-flex justify-content-center align-items-center h-100">
                <div class="col-10">
 
-                    <div class="d-flex justify-content-between align-items-center mb-4 text-register">
-                         <div>
-                              <p class="mb-0">
-                                   <span class="text-muted">Sort by:</span> <a href="#!" class="text-body">
-                                        price <i class="fas fa-angle-down mt-1"></i>
-                                   </a>
-                              </p>
-                         </div>
-                    </div>
                     @foreach (var item in Model)
                     {
 
@@ -57,7 +48,22 @@
                                              @using (Html.BeginForm("DeleteFromCart", "Carts", new { productId = item.Product.Id, userId = user.Id }, FormMethod.Post))
                                              {
                                                   @Html.AntiForgeryToken()
-                                                  <button type="submit" class="btn-link">Delete</button>
+                                                  <button type="submit" class="btn btn-danger">Delete</button>
+                                             }
+                                             <br />
+                                             @using (Html.BeginForm("BuyFromCart", "Carts", new { productId = item.Product.Id, userId = user.Id }, FormMethod.Post))
+                                             {
+                                                  @Html.AntiForgeryToken()
+                                                  <button id="myButton" class="btn btn-success">
+                                                       Buy
+                                                  </button>
+
+                                                  <div id="myPopup" class="popup">
+                                                       <div class="popup-content">
+                                                            <h1 style="color: green;">Successful!</h1>
+                                                            <p>The product has been successfully purchased.</p>
+                                                       </div>
+                                                  </div>
                                              }
                                         </div>
                                    </div>

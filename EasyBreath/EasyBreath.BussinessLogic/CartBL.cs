@@ -21,6 +21,11 @@ namespace EasyBreath.BussinessLogic
                return ReturnDeleteFromCart(item, userId);
           }
 
+          public ServiceResponse ValidateBuyFromCart(Product item, int userId)
+          {
+               return ReturnBuyFromCart(item, userId);
+          }
+
           public List<Cart> GetCartItemList(User user)
           {
                return AllCartItems(user);

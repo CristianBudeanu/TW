@@ -165,5 +165,40 @@ namespace EasyBreath.BussinessLogic.Core
                     return response;
                }
           }
-     }
+
+          public ServiceResponse ReturnBuyFromCart(Product data, int userId)
+          {
+               var response = new ServiceResponse();
+               using (var db = new CartContext())
+               {
+                    try
+                    {
+                         //     // Check if the user already exists in the database
+                         var existingCart = db.Carts.FirstOrDefault(u => (u.CartId == userId) && (u.ProductId == data.Id));
+                         if (existingCart != null)
+                         {
+
+                              db.Carts.Remove(existingCart);
+                              db.SaveChanges();
+                              response.StatusMessage = "Product buyed successfully";
+                              response.Status = true;
+                              return response;
+
+                         }
+                         response.StatusMessage = "Product not found";
+                         response.Status = false;
+                         return response;
+
+                    }
+                    catch (Exception ex)
+                    {
+                         response.StatusMessage = "An error occurred while deleting the item";
+                         response.Status = false;
+                         //response.Exception = ex;
+                    }
+                    return response;
+               }
+          }
+
+       }
 }
