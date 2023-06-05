@@ -41,6 +41,7 @@ namespace EasyBreath.BussinessLogic.Core
 
                               return items.Select(item => new Cart
                               {
+                                   CartId = item.CartId,
                                    Product = item.Product,
                                    Quantity = item.Quantity
                               }).ToList();

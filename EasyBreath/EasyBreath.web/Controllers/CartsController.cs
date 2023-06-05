@@ -30,7 +30,7 @@ namespace EasyBreath.web.Controllers
           {
                using (var db = new UserContext())
                {
-                    var user = db.Users.FirstOrDefault(id => id.Id == userId);
+                    var user = db.Users.FirstOrDefault(id => id.Id == userId);           
                     return View(_cart.GetCartItemList(user));
                }
 
@@ -65,7 +65,7 @@ namespace EasyBreath.web.Controllers
           {   
                _cart.ValidateBuyFromCart(userId);
                await Task.Delay(2500);
-               return RedirectToAction("Index", "Carts", new { userId });
+               return RedirectToAction("Index", "Products");
           }
 
           [AuthorizedMod]

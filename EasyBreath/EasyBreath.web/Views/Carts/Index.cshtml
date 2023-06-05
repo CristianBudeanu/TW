@@ -17,63 +17,79 @@
      </div>
 </section>
 
-
-<section class="h-100 text-register" style="background-color: #eee;">
-
-     @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
-     {
-          using (Html.BeginForm("BuyFromCart", "Carts", new { userId = user.Id }, FormMethod.Post))
+<section class="container text-register" style="background-color: white;">
+     <div>
+          @using (Html.BeginForm("BuyFromCart", "Carts", new { userId = user.Id }, FormMethod.Post))
           {
                @Html.AntiForgeryToken()
-               <button id="myButton" class="btn btn-success" style="margin-left: 1200px">
-                    Buy all
-               </button>
-
-               <div id="myPopup" class="popup">
-                    <div class="popup-content">
-                         <h1 style="color: green;">Successful!</h1>
-                         <p>The products has been successfully purchased.</p>
-                    </div>
-               </div>
-          }
-     }
-     <div class="container h-100 py-5 text-register">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-               <div class="col-10">
-
-                    @foreach (var item in Model)
+               var count = 0;
+               foreach (var item in Model)
+               {
+                    if (count == 0)
                     {
+                         <button id="myButton" class="btn btn-success" style="margin-left: 1200px">
+                              Buy all
+                         </button>
 
-                         <div class="card rounded-3 mb-4 text-register">
-                              <div class="card-body p-4 text-register">
-                                   <div class="row d-flex justify-content-between align-items-center">
-                                        <div class="col-md-2 col-lg-2 col-xl-2 text-register">
-                                             <img src="@Html.DisplayFor(modelItem => item.Product.Thumbnail)"
-                                                  class="img-fluid rounded-3" alt="Cotton T-shirt">
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-3">
-                                             <p class="lead fw-normal mb-2">@Html.DisplayFor(modelItem => item.Product.Name)</p>
-                                        </div>
-                                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                             <p>Quantity: @Html.DisplayFor(modelItem => item.Quantity)</p>
-                                        </div>
-                                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                             <h5 class="mb-0">$@Html.DisplayFor(modelItem => item.Product.Price)</h5>
-                                        </div>
-                                        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                             <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                                             @using (Html.BeginForm("DeleteFromCart", "Carts", new { productId = item.Product.Id, userId = user.Id }, FormMethod.Post))
-                                             {
-                                                  @Html.AntiForgeryToken()
-                                                  <button type="submit" class="btn btn-danger">Delete</button>
-                                             }
-                                             <br />
+                         <div id="myPopup" class="popup">
+                              <div class="popup-content">
+                                   <h1 style="color: green;">Successful!</h1>
+                                   <p>The products has been successfully purchased.</p>
+                              </div>
+                         </div>
+
+                         count++;
+                    }
+                    if (item.CartId == user.Id)
+                    {
+                         <div class="container h-100 py-5 text-register" style="margin-top: -150px">
+                              <div class="row d-flex justify-content-center align-items-center h-100">
+                                   <div class="col-10">
+                                        <div class="container h-10 py-5 text-register">
+                                             <div class="row d-flex justify-content-center align-items-center h-100">
+                                                  <div class="col-10">
+                                                       <div class="card rounded-3 mb-4 text-register">
+                                                            <div class="card-body p-4 text-register">
+                                                                 <div class="row d-flex justify-content-between align-items-center">
+                                                                      <div class="col-md-2 col-lg-2 col-xl-2 text-register">
+                                                                           <img src="@Html.DisplayFor(modelItem => item.Product.Thumbnail)"
+                                                                                class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                                                      </div>
+                                                                      <div class="col-md-3 col-lg-3 col-xl-3">
+                                                                           <p class="lead fw-normal mb-2">@Html.DisplayFor(modelItem => item.Product.Name)</p>
+                                                                      </div>
+                                                                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                                           <p>Quantity: @Html.DisplayFor(modelItem => item.Quantity)</p>
+                                                                      </div>
+                                                                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                                           <h5 class="mb-0">$@Html.DisplayFor(modelItem => item.Product.Price)</h5>
+                                                                      </div>
+                                                                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                                           <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                                                           @using (Html.BeginForm("DeleteFromCart", "Carts", new { productId = item.Product.Id, userId = user.Id }, FormMethod.Post))
+                                                                           {
+                                                                                @Html.AntiForgeryToken()
+                                                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                                           }
+                                                                           <br />
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+
+                                                       </div>
+                                                  </div>
+                                             </div>
                                         </div>
                                    </div>
                               </div>
                          </div>
                     }
-               </div>
-          </div>
+
+               }
+               if (count == 0)
+               {
+                    <div class="cart info">Cart is empty</div>
+               }
+          }
      </div>
 </section>
