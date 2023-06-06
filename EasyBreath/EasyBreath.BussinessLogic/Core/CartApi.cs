@@ -41,6 +41,7 @@ namespace EasyBreath.BussinessLogic.Core
 
                               return items.Select(item => new Cart
                               {
+                                   CartId = item.CartId,
                                    Product = item.Product,
                                    Quantity = item.Quantity
                               }).ToList();
@@ -165,5 +166,47 @@ namespace EasyBreath.BussinessLogic.Core
                     return response;
                }
           }
-     }
+
+          public ServiceResponse ReturnBuyFromCart(int userId)
+          {
+               var response = new ServiceResponse();
+               using (var db = new CartContext())
+               {
+                    try
+                    {
+                         //     // Check if the user already exists in the database
+                         var existingCart = db.Carts.FirstOrDefault(u => (u.CartId == userId));
+                         if (existingCart != null)
+                         {
+                              var carts = db.Carts
+                             .Where(item => item.CartId == userId)
+                             .ToList();
+
+                              foreach (var item in carts)
+                              {       
+                                   db.Carts.Remove(item);
+                              }
+                              
+                              db.SaveChanges();
+                              response.StatusMessage = "Products from cart buyed successfully";
+                              response.Status = true;
+                              return response;
+
+                         }
+                         response.StatusMessage = "Cart not found";
+                         response.Status = false;
+                         return response;
+
+                    }
+                    catch (Exception ex)
+                    {
+                         response.StatusMessage = "An error occurred while buyng from cart";
+                         response.Status = false;
+                         //response.Exception = ex;
+                    }
+                    return response;
+               }
+          }
+
+       }
 }

@@ -12,6 +12,7 @@
      <meta content="" name="keywords">
 
      <!-- Favicons -->
+     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
      <link href="~/assets/img/chili-pepper.png" rel="icon">
      <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
      <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -206,6 +207,22 @@
                     ResCarousel(ell, Parent, slide);
                }
 
+          });
+     </script>
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+     <script>
+          function closePopup() {
+               var popup = document.getElementById("myPopup");
+               popup.classList.remove("show");
+               location.reload(); // Refresh the page
+          }
+
+          document.getElementById("myButton").addEventListener("click", function () {
+               var popup = document.getElementById("myPopup");
+               popup.classList.add("show");
           });
      </script>
 

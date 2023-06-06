@@ -1,9 +1,12 @@
 ﻿using EasyBreath.BussinessLogic.DBModel;
 using EasyBreath.BussinessLogic.Interfaces;
+using EasyBreath.Domain.Entities.User;
 using EasyBreath.web.ActionAtributes;
+using EasyBreath.web.Extensions;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
-
+using System.Web.UI;
 
 namespace EasyBreath.web.Controllers
 {
@@ -26,12 +29,20 @@ namespace EasyBreath.web.Controllers
           [HttpGet]
           public ActionResult Index(int userId)
           {
-               using (var db = new UserContext())
+               //var currentUser = System.Web.HttpContext.Current.GetMySessionObject();
+               if (System.Web.HttpContext.Current.GetMySessionObject().Id == userId)
                {
-                    var user = db.Users.FirstOrDefault(id => id.Id == userId);
-                    return View(_cart.GetCartItemList(user));
+                    using (var db = new UserContext())
+                    {
+                         var user = db.Users.FirstOrDefault(id => id.Id == userId);
+                         return View(_cart.GetCartItemList(user));
+                    }
                }
-
+               else
+               {
+                    return RedirectToAction("Index", "Carts", new {userId});
+               }
+               
           }
 
 
@@ -46,7 +57,7 @@ namespace EasyBreath.web.Controllers
                     var response = _cart.ValidateDeleteFromCart(product, userId);
                     if (response.Status)
                     {
-                         return RedirectToAction("Index", "Products");
+                         return RedirectToAction("Index", "Carts", new {userId});
                     }
                     return RedirectToAction("Index", "Home");
 
@@ -55,6 +66,15 @@ namespace EasyBreath.web.Controllers
                {
                     return RedirectToAction("Index", "Home");
                }
+          }
+
+          [AuthorizedMod]
+          [HttpPost]
+          public async Task<ActionResult> BuyFromCart(int userId)
+          {   
+               _cart.ValidateBuyFromCart(userId);
+               await Task.Delay(2500);
+               return RedirectToAction("Index", "Carts", new {userId});
           }
 
           [AuthorizedMod]
