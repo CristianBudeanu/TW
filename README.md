@@ -50,6 +50,9 @@ https://github.com/CristianBudeanu/TW/assets/52885053/76382ec8-6758-47a5-93f3-97
 *Project description*
 ![image](https://github.com/CristianBudeanu/TW/assets/52885053/2819dcc7-07c3-4ee5-81b8-485d836c7e3b)
 
+*Demo*
+https://www.youtube.com/watch?v=L5_GnFH78kI
+
 ## Development
 To start project you need to follow next steps:
 1. Install all technologies described in the setup field
